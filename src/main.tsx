@@ -4,9 +4,10 @@ import "@fontsource/josefin-sans";
 import "@fontsource/josefin-sans/400.css";
 import "@fontsource/playfair-display";
 import "@fontsource/playfair-display/400.css";
+import App from "./components/App/App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <div />
+    <App />
   </React.StrictMode>,
 );
