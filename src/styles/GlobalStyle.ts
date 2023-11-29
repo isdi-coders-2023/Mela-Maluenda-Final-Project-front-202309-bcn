@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 } 
 
 html {
-  font-family: ${({ theme }) => theme.typography.mainFontFamily}
+  font-family: ${({ theme }) => theme.typography.mainFontFamily};
 }
 
 body, h1, h2, h3, p  {
@@ -30,7 +30,9 @@ a {
 }
 
 button,
-input {
+input, 
+textarea, 
+select {
   font-family: inherit;
   text-align: center;
   padding: 10px;
