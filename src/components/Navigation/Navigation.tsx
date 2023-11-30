@@ -5,7 +5,7 @@ const Navigation = (): React.ReactElement => {
   return (
     <NavigationStyled>
       <ul className="menu">
-        <NavLink to="/">
+        <NavLink to="/home">
           <li className="menu__home">Home</li>
         </NavLink>
         <NavLink to="/">
