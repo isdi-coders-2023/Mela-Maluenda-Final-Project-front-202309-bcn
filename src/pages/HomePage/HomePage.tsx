@@ -1,6 +1,16 @@
+import { useDispatch } from "react-redux";
 import HomeStyled from "./HomePageStyled";
+import { useEffect } from "react";
+import { loadPhotosActionCreator } from "../../store/features/photosSlice";
+import photosData from "../../data/photosData/photosData";
 
 const HomePage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadPhotosActionCreator(photosData));
+  }, [dispatch]);
+
   return (
     <HomeStyled className="data">
       <article className="data__article">
