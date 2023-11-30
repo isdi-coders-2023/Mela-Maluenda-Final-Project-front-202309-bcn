@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
 
-const App = () => {
+const App = (): React.ReactElement => {
   return (
     <main>
       <Header />
