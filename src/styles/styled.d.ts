@@ -11,7 +11,6 @@ declare module "styled-components" {
       backgroundDark: string;
       mainText: string;
     };
-
     typography: {
       mainFontFamily: string;
       regularFontFamily: string;
