@@ -1,8 +1,10 @@
+import Navigation from "../Navigation/Navigation";
 import HeaderStyled from "./HeaderStyled";
 
 const Header = (): React.ReactElement => {
   return (
     <HeaderStyled className="head">
+      <Navigation />
       <img
         className="head__logo"
         src="/images/logoExpected.webp"
