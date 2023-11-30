@@ -10,7 +10,6 @@ const mainTheme: DefaultTheme = {
     backgroundDark: "#384045",
     mainText: "#213327",
   },
-
   typography: {
     mainFontFamily: "'Playfair Display', serif",
     regularFontFamily: "'Josefin Sans', sans-serif",

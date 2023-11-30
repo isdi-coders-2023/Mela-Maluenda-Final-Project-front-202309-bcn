@@ -46,6 +46,10 @@ h2, h3, p {
   font-size: ${({ theme }) => theme.typography.regularFontFamily};
 }
 
+img {
+  max-width: 100%;
+}
+
 button {
   cursor: pointer;
 }
