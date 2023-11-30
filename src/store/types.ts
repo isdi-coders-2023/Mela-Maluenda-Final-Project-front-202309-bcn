@@ -1,6 +1,6 @@
 export type Category = "Long shot" | "Medium shot";
 
-interface PhotosStructure {
+export interface PhotosStructure {
   id: string;
   title: string;
   author: string;
@@ -13,4 +13,6 @@ interface PhotosStructure {
   photoUrl: string;
 }
 
-export default PhotosStructure;
+export interface PhotosStateStructure {
+  photos: PhotosStructure[];
+}
