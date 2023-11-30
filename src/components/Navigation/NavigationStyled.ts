@@ -16,6 +16,11 @@ const NavigationStyled = styled.nav`
       font-family: ${({ theme }) => theme.colors.backgroundDark};
     }
   }
+
+  .active {
+    font-weight: 900;
+    text-decoration-line: underline;
+  }
 `;
 
 export default NavigationStyled;

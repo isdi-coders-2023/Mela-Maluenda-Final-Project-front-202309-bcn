@@ -13,10 +13,10 @@ const mainTheme: DefaultTheme = {
   typography: {
     mainFontFamily: "'Playfair Display', serif",
     regularFontFamily: "'Josefin Sans', sans-serif",
-    mainSize: "3rem",
-    titleSize: "2.2rem",
-    secondaryTitleSize: "1.5rem",
-    regularSize: "1,125rem",
+    mainSize: "1.375rem",
+    titleSize: "1.25rem",
+    secondaryTitleSize: "1.125rem",
+    regularSize: "1rem",
   },
 };
 
