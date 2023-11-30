@@ -1,6 +1,6 @@
-import { PhotosStructure } from "../store/types";
+import { PhotosStructure } from "../../store/types";
 
-const photosMock: PhotosStructure[] = [
+const photosData: PhotosStructure[] = [
   {
     id: "a",
     title: "Ghost",
@@ -42,4 +42,4 @@ const photosMock: PhotosStructure[] = [
   },
 ];
 
-export default photosMock;
+export default photosData;
