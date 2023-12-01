@@ -15,7 +15,7 @@ const HeaderStyled = styled.header`
 
     &__logo {
       position: absolute;
-      top: 25px;
+      top: 31px;
       right: 0;
       left: 0;
       margin: auto;
