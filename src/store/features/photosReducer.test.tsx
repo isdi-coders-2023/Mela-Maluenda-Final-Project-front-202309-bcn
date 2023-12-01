@@ -1,6 +1,6 @@
 import photosMock from "../../mocks/photosMock";
-import { PhotosStateStructure } from "../types";
 import { loadPhotosActionCreator, photosReducer } from "./photosSlice";
+import PhotosStateStructure from "./types";
 
 describe("Given a loadPhotos reducer", () => {
   describe("When it is call with te current state and the action to load photos", () => {
