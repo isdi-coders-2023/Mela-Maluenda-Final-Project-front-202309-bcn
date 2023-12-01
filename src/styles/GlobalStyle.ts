@@ -40,10 +40,7 @@ input {
 
 h1, h2, h3, p {
   color: ${({ theme }) => theme.colors.mainText};
-}
-
-h2, h3, p {
-  font-size: ${({ theme }) => theme.typography.regularFontFamily};
+  font-family: ${({ theme }) => theme.typography.regularFontFamily};
 }
 
 img {

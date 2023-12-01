@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  padding-top: 35px;
+  padding-top: 30px;
 
   .head {
     &__banner {
