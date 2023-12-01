@@ -3,9 +3,9 @@ import { screen } from "@testing-library/react";
 import HomePage from "./HomePage";
 import photosMock from "../../mocks/photosMock";
 
-describe("Given the HomPage", () => {
+describe("Given the HomPage component", () => {
   describe("When it is rendered", () => {
-    test("Then it should show a ");
+    test("Then it should show a title 'Street photography' ");
     const expectedTitle = "Street photography";
     const mockContest = photosMock;
 

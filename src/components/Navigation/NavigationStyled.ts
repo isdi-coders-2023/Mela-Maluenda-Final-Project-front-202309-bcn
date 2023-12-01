@@ -9,6 +9,7 @@ const NavigationStyled = styled.nav`
 
     &__home,
     &__add {
+      margin-bottom: 5px;
       font-weight: 400;
       text-transform: uppercase;
       font-family: ${({ theme }) => theme.typography.regularFontFamily};

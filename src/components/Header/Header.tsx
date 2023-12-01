@@ -12,10 +12,7 @@ const Header = (): React.ReactElement => {
         width="99"
         height="62"
       />
-      <div
-        className="head__banner"
-        title="Empty white street where we can only see a bent legs on a window."
-      ></div>
+      <div className="head__banner" />
     </HeaderStyled>
   );
 };
