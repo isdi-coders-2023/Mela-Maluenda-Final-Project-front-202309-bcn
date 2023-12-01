@@ -12,7 +12,3 @@ export interface PhotosStructure {
   whatMadeYouClick: string;
   photoUrl: string;
 }
-
-export interface PhotosStateStructure {
-  photos: PhotosStructure[];
-}

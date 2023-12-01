@@ -1,0 +1,1 @@
+const PhotoCardStyled = styled;

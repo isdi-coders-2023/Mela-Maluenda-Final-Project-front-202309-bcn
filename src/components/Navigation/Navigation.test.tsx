@@ -8,7 +8,7 @@ describe("Given a navigation component", () => {
     const mockContest = photosMock;
     customRender(<Navigation />, mockContest);
 
-    test("It should show a list with a Home name", () => {
+    test("Then it should show a list with a Home name", () => {
       const expectedLiText = "Home";
 
       const liText = screen.getByText(expectedLiText);
