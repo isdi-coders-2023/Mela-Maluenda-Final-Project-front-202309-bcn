@@ -12,8 +12,8 @@ const NavigationStyled = styled.nav`
       font-weight: 400;
       text-transform: uppercase;
       font-family: ${({ theme }) => theme.typography.regularFontFamily};
-      font-family: ${({ theme }) => theme.typography.regularSize};
-      font-family: ${({ theme }) => theme.colors.backgroundDark};
+      font-size: ${({ theme }) => theme.typography.regularSize};
+      color: ${({ theme }) => theme.colors.backgroundDark};
     }
   }
 
