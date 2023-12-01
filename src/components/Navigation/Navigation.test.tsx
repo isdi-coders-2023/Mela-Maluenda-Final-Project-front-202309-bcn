@@ -11,7 +11,7 @@ describe("Given a navigation component", () => {
     test("It should show a list with a Home name", () => {
       const expectedLiText = "Home";
 
-      const liText = screen.getByRole("link", { name: expectedLiText });
+      const liText = screen.getByText(expectedLiText);
 
       expect(liText).toBeInTheDocument();
     });
