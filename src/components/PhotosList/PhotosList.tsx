@@ -8,7 +8,7 @@ const PhotosList = (): React.ReactElement => {
   return (
     <PhotosListStyled>
       {photos.map((photo) => (
-        <li key={photo._id}>
+        <li key={photo.id}>
           <PhotoCard photo={photo} />
         </li>
       ))}

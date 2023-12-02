@@ -1,7 +1,7 @@
 export type Category = "Long shot" | "Medium shot";
 
 export interface PhotosStructure {
-  _id: string;
+  id: string;
   title: string;
   author: string;
   year: string;
