@@ -1,4 +1,5 @@
 import { PhotosStructure } from "../../store/types";
+import Button from "../Button/Button";
 import PhotoCardStyled from "./PhotoCardStyled";
 
 interface PhotosCardProps {
@@ -37,6 +38,10 @@ const PhotoCard = ({
       </div>
       <span className="card__subtitle">{`${location}, ${year}`}</span>
       <span className="card__subtitle">{`${category}`}</span>
+      <div className="card__button">
+        <Button type={"button"} text={"Modify"} />
+        <Button type={"button"} text={"Delete"} />
+      </div>
     </PhotoCardStyled>
   );
 };
