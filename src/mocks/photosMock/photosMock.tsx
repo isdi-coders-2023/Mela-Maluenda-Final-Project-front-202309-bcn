@@ -1,4 +1,4 @@
-import { PhotosStructure } from "../store/types";
+import { PhotosStructure } from "../../store/types";
 
 const photosMock: PhotosStructure[] = [
   {

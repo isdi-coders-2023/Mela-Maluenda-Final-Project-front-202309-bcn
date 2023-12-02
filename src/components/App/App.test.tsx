@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import photosMock from "../../mocks/photosMock";
+import photosMock from "../../mocks/photosMock/photosMock";
 import customRender from "../../testUtils/customRender";
 import App from "./App";
 
