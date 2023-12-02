@@ -5,11 +5,11 @@ import PhotosList from "./PhotosList";
 
 describe("Given a PhotosList component", () => {
   describe("When it receives a list of photos title", () => {
-    test("Then it should show 'Ghost, Urban Angel, Dee thoughts'", () => {
+    test("Then it should show 'Ghost'", () => {
       const mockContest = photosMock;
       customRender(<PhotosList />, mockContest);
 
-      const expectedTitle = "Ghost";
+      const expectedTitle = "« Ghost »";
 
       const photosHeadingElement = screen.getByRole("heading", {
         name: expectedTitle,
