@@ -8,7 +8,7 @@ describe("Given the component header", () => {
     const mockContest = photosMock;
     customRender(<Header />, mockContest);
 
-    test("Then it should show a logo with the alt: `Logo that say's Walk the line`", () => {
+    test("Then it should show a logo with the alt: 'Logo that say's Walk the line'", () => {
       const expectedAltText = "Logo that say's Walk the line";
 
       const imageAltText = screen.getByAltText(expectedAltText);
