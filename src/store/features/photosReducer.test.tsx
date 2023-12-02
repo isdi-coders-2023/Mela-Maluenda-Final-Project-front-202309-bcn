@@ -1,4 +1,4 @@
-import photosMock from "../../mocks/photosMock";
+import photosMock from "../../mocks/photosMock/photosMock";
 import { loadPhotosActionCreator, photosReducer } from "./photosSlice";
 import PhotosStateStructure from "./types";
 

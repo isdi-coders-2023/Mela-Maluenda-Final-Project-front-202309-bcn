@@ -1,7 +1,7 @@
 import customRender from "../../testUtils/customRender";
 import { screen } from "@testing-library/react";
 import HomePage from "./HomePage";
-import photosMock from "../../mocks/photosMock";
+import photosMock from "../../mocks/photosMock/photosMock";
 
 describe("Given the HomPage component", () => {
   describe("When it is rendered", () => {
