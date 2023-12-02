@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../store/hooks";
+import PhotoCard from "../PhotoCard/PhotoCard";
 import PhotosListStyled from "./PhotosListStyled";
 
 const PhotosList = (): React.ReactElement => {
@@ -8,7 +9,7 @@ const PhotosList = (): React.ReactElement => {
     <PhotosListStyled>
       {photos.map((photo) => (
         <li key={photo.id}>
-          <h2>{photo.title}</h2>
+          <PhotoCard photo={photo} />
         </li>
       ))}
     </PhotosListStyled>
