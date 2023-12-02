@@ -33,7 +33,7 @@ const HeaderStyled = styled.header`
   }
 
   @media (min-width: 985px) {
-    padding-top: 70px;
+    padding-top: 40px;
     .head {
       &__banner {
         background-image: url("./images/banner800.webp");

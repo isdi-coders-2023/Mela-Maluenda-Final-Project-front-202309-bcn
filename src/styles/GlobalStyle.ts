@@ -12,7 +12,7 @@ html {
   font-family: ${({ theme }) => theme.typography.mainFontFamily}
 }
 
-body, h1, h2, h3, p  {
+body, h1, h2, h3, h4, p  {
   margin: 0;
 }
 
@@ -38,7 +38,7 @@ input {
   border-radius: 5px;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
   color: ${({ theme }) => theme.colors.mainText};
   font-family: ${({ theme }) => theme.typography.regularFontFamily};
 }

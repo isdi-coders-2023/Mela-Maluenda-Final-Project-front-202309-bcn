@@ -4,6 +4,7 @@ declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
       error: string;
+      light: string;
       lighter: string;
       accentLight: string;
       accentDark: string;
@@ -15,6 +16,7 @@ declare module "styled-components" {
       mainFontFamily: string;
       regularFontFamily: string;
       mainSize: string;
+      titleSuperSize: string;
       titleSize: string;
       secondaryTitleSize: string;
       regularSize: string;
