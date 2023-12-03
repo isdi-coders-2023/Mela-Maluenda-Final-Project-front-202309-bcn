@@ -2,7 +2,7 @@ import { PhotosStructure } from "../../store/types";
 
 const photosMock: PhotosStructure[] = [
   {
-    id: "a",
+    _id: "a",
     title: "Ghost",
     author: "Enrique Muda",
     year: "2018",
@@ -15,7 +15,7 @@ const photosMock: PhotosStructure[] = [
     photoUrl: "https://i.ibb.co/r3PQynN/ghost.webp",
   },
   {
-    id: "b",
+    _id: "b",
     title: "Urban angel",
     author: "Bruce Gilden",
     year: "2014",
@@ -28,7 +28,7 @@ const photosMock: PhotosStructure[] = [
     photoUrl: "https://i.ibb.co/3pDTh18/urban-angel.webp",
   },
   {
-    id: "c",
+    _id: "c",
     title: "Deep thoughts",
     author: "Matt stuart",
     year: "2012",

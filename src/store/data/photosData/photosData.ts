@@ -1,7 +1,7 @@
-import { PhotosStructure } from "../../store/types";
+import { PhotosStructure } from "../../types";
 
 export const photoData: PhotosStructure = {
-  id: "a",
+  _id: "a",
   title: "Ghost",
   author: "Enrique Muda",
   year: "2018",
@@ -16,7 +16,7 @@ export const photoData: PhotosStructure = {
 
 export const photosData: PhotosStructure[] = [
   {
-    id: "a",
+    _id: "a",
     title: "Ghost",
     author: "Enrique Muda",
     year: "2018",
@@ -29,7 +29,7 @@ export const photosData: PhotosStructure[] = [
     photoUrl: "https://i.ibb.co/r3PQynN/ghost.webp",
   },
   {
-    id: "b",
+    _id: "b",
     title: "Urban angel",
     author: "Bruce Gilden",
     year: "2014",
@@ -42,7 +42,7 @@ export const photosData: PhotosStructure[] = [
     photoUrl: "https://i.ibb.co/3pDTh18/urban-angel.webp",
   },
   {
-    id: "c",
+    _id: "c",
     title: "Deep thoughts",
     author: "Matt stuart",
     year: "2012",
