@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import photosMock from "../../mocks/photosMock/photosMock";
 import customRender from "../../testUtils/customRender";
 import PhotoCard from "./PhotoCard";
-import { photoData } from "../../data/photosData/photosData";
+import { photoData } from "../../store/data/photosData/photosData";
 
 describe("Given a PhotoCard component", () => {
   describe("When it receives a 'Ghost'", () => {

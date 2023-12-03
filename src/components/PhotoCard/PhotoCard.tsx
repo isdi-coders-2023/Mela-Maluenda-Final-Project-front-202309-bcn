@@ -19,7 +19,7 @@ const PhotoCard = ({
         height="187"
       />
       <h3 className="card__title">{`« ${title} »`}</h3>
-      <h4 className="card__title">{`by ${author}`}</h4>
+      <h4 className="card__title card__title--author">{`by ${author}`}</h4>
       <div className="card__icons">
         <img
           className="card__icon"
