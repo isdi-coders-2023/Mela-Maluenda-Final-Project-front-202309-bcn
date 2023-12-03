@@ -11,8 +11,8 @@ const HomePage = (): React.ReactElement => {
 
   useEffect(() => {
     (async () => {
-      const { photos } = await getPhotosApi();
-      dispatch(loadPhotosActionCreator(photos));
+      const photos = await getPhotosApi();
+      dispatch(loadPhotosActionCreator(photos.photos));
     })();
   }, [dispatch, getPhotosApi]);
 
