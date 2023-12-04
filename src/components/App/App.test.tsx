@@ -2,11 +2,7 @@ import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import photosMock from "../../mocks/photosMock/photosMock";
 import App from "./App";
-import {
-  customRender,
-  customRenderWithoutRouter,
-} from "../../testUtils/customRender";
-import { MemoryRouter } from "react-router-dom";
+import { customRender } from "../../testUtils/customRender";
 
 describe("Given the App component", () => {
   describe("When it is rendered", () => {
