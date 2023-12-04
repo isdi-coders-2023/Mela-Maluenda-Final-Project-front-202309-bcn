@@ -6,7 +6,6 @@ const HeaderStyled = styled.header`
   .head {
     &__banner {
       background-image: url("./images/banner600.webp");
-      width: 100vw;
       height: 140px;
       background-size: cover;
       background-position: center;

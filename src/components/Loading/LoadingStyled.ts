@@ -56,6 +56,12 @@ const LoadingStyled = styled.div`
       opacity: 0;
     }
   }
+
+  @media (prefers-reduced-motion) {
+    .loader {
+      display: none;
+    }
+  }
 `;
 
 export default LoadingStyled;
