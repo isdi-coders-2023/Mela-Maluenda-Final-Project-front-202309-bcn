@@ -9,6 +9,7 @@ const mainTheme: DefaultTheme = {
     accentDark: "#465e4f",
     backgroundLight: "#688086",
     backgroundDark: "#384045",
+    backgroundDarkOpacity: "#384045cc",
     mainText: "#213327",
   },
   typography: {

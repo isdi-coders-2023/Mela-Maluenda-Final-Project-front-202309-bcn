@@ -10,6 +10,7 @@ declare module "styled-components" {
       accentDark: string;
       backgroundLight: string;
       backgroundDark: string;
+      backgroundDarkOpacity: string;
       mainText: string;
     };
     typography: {
