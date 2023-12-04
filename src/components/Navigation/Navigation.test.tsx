@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import photosMock from "../../mocks/photosMock/photosMock";
-import customRender from "../../testUtils/customRender";
 import Navigation from "./Navigation";
+import { customRender } from "../../testUtils/customRender";
 
 describe("Given a navigation component", () => {
   describe("When it rendered", () => {
