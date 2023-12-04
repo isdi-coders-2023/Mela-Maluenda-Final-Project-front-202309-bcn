@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import photosMock from "../../mocks/photosMock/photosMock";
-import customRender from "../../testUtils/customRender";
 import PhotoCard from "./PhotoCard";
+import { customRender } from "../../testUtils/customRender";
 
 describe("Given a PhotoCard component", () => {
   describe("When it receives a 'Ghost'", () => {

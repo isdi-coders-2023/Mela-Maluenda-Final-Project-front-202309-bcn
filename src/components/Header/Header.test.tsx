@@ -1,5 +1,5 @@
 import photosMock from "../../mocks/photosMock/photosMock";
-import customRender from "../../testUtils/customRender";
+import { customRender } from "../../testUtils/customRender";
 import Header from "./Header";
 import { screen } from "@testing-library/react";
 
