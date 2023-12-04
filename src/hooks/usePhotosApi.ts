@@ -1,6 +1,6 @@
 import axios from "axios";
-import { PhotosStructure } from "../store/types";
 import { useCallback } from "react";
+import { PhotosStructure } from "../store/types";
 
 const usePhotosApi = () => {
   axios.defaults.baseURL = import.meta.env.VITE_API_URL;
@@ -12,6 +12,7 @@ const usePhotosApi = () => {
 
     return photos;
   }, []);
+
   return { getPhotosApi };
 };
 
