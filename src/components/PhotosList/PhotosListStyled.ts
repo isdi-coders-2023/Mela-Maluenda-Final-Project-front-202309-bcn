@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const PhotosListStyled = styled.ul`
-  padding: 20px 25px;
+  padding: 20px 10px;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 280px);
   gap: 40px;
   justify-items: center;
   justify-content: space-around;

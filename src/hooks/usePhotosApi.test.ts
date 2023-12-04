@@ -1,6 +1,7 @@
 import { renderHook } from "@testing-library/react";
 import photosMock from "../mocks/photosMock/photosMock";
 import usePhotosApi from "./usePhotosApi";
+import { providerWrapper } from "../testUtils/customRender";
 
 describe("Given a usePhotosApi hook", () => {
   describe("when it is called", () => {
@@ -11,7 +12,7 @@ describe("Given a usePhotosApi hook", () => {
         result: {
           current: { getPhotosApi },
         },
-      } = renderHook(() => usePhotosApi());
+      } = renderHook(() => usePhotosApi(), { wrapper: providerWrapper });
 
       const photos = await getPhotosApi();
 

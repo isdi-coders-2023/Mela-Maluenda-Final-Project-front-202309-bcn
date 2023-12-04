@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
-import customRender from "../../testUtils/customRender";
 import Button from "./Button";
 import photosMock from "../../mocks/photosMock/photosMock";
+import { customRender } from "../../testUtils/customRender";
 
 describe("Given a Button component", () => {
   describe("When it receives a text 'Modify'", () => {

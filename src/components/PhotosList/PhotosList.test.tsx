@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import photosMock from "../../mocks/photosMock/photosMock";
-import customRender from "../../testUtils/customRender";
 import PhotosList from "./PhotosList";
+import { customRender } from "../../testUtils/customRender";
 
 describe("Given a PhotosList component", () => {
   describe("When it receives a list of photos title", () => {
