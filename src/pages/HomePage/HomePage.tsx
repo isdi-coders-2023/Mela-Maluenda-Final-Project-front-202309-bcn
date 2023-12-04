@@ -2,15 +2,19 @@ import { useDispatch } from "react-redux";
 import HomeStyled from "./HomePageStyled";
 import { useEffect } from "react";
 import { loadPhotosActionCreator } from "../../store/features/photosSlice";
-import { photosData } from "../../data/photosData/photosData";
 import PhotosList from "../../components/PhotosList/PhotosList";
+import usePhotosApi from "../../hooks/usePhotosApi";
 
-const HomePage = () => {
+const HomePage = (): React.ReactElement => {
   const dispatch = useDispatch();
+  const { getPhotosApi } = usePhotosApi();
 
   useEffect(() => {
-    dispatch(loadPhotosActionCreator(photosData));
-  }, [dispatch]);
+    (async () => {
+      const photos = await getPhotosApi();
+      dispatch(loadPhotosActionCreator(photos.photos));
+    })();
+  }, [dispatch, getPhotosApi]);
 
   return (
     <HomeStyled className="data">

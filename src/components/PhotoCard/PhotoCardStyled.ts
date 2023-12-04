@@ -16,6 +16,13 @@ const PhotoCardStyled = styled.article`
       justify-content: center;
       font-family: ${({ theme }) => theme.typography.mainFontFamily};
       font-size: ${({ theme }) => theme.typography.titleSize};
+
+      &--author {
+        font-size: ${({ theme }) => theme.typography.secondaryTitleSize};
+        text-align: center;
+        padding-bottom: 0px;
+        padding-top: 0px;
+      }
     }
 
     &__icons {
