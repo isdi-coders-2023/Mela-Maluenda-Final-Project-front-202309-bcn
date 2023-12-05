@@ -24,7 +24,20 @@ const usePhotosApi = () => {
     return photos;
   }, [dispatch]);
 
-  return { getPhotosApi };
+  const deletePhoto = useCallback(
+    async (id: string): Promise<void> => {
+      dispatch(showLoadingActionsCreator());
+
+      const { data } = await axios.delete(`/photos/${id}`);
+
+      dispatch(hideLoadingActionsCreator());
+
+      return data;
+    },
+    [dispatch],
+  );
+
+  return { getPhotosApi, deletePhoto: deletePhoto };
 };
 
 export default usePhotosApi;
