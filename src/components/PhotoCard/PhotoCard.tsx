@@ -1,3 +1,9 @@
+import usePhotosApi from "../../hooks/usePhotosApi";
+import {
+  deletePhotoActionsCreator,
+  loadPhotosActionCreator,
+} from "../../store/features/photosSlice";
+import { useAppDispatch } from "../../store/hooks";
 import { PhotosStructure } from "../../store/types";
 import Button from "../Button/Button";
 import PhotoCardStyled from "./PhotoCardStyled";
@@ -7,8 +13,19 @@ interface PhotosCardProps {
 }
 
 const PhotoCard = ({
-  photo: { title, author, year, location, category, photoUrl },
+  photo: { title, author, year, location, category, photoUrl, _id },
 }: PhotosCardProps): React.ReactElement => {
+  const dispatch = useAppDispatch();
+  const { deletePhoto, getPhotosApi } = usePhotosApi();
+
+  const deletePhotoApi = async (id: string): Promise<void> => {
+    await deletePhoto(id);
+    dispatch(deletePhotoActionsCreator(id));
+
+    const photos = await getPhotosApi();
+    dispatch(loadPhotosActionCreator(photos.photos));
+  };
+
   return (
     <PhotoCardStyled className="card">
       <img
@@ -40,7 +57,13 @@ const PhotoCard = ({
       <span className="card__subtitle">{`${category}`}</span>
       <div className="card__button">
         <Button type={"button"} text={"Modify"} />
-        <Button type={"button"} text={"Delete"} />
+        <Button
+          type={"submit"}
+          actionOnClick={() => {
+            deletePhotoApi(_id);
+          }}
+          text={"Delete"}
+        />
       </div>
     </PhotoCardStyled>
   );
