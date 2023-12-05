@@ -21,7 +21,7 @@ describe("Given a usePhotosApi hook", () => {
   });
 
   describe("When it calls the deletePhoto method with a 'Urban angel' id", () => {
-    test.only("Then it should delete the 'Urban angel' photo from the API Rest", async () => {
+    test("Then it should delete the 'Urban angel' photo from the API Rest", async () => {
       const expectedPhotoId = photosMock[1]._id;
       const expectedEmptyObject = {};
 
