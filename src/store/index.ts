@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import { photosReducer as photoReducer } from "./features/photosSlice";
+import { photoReducer as photoReducer } from "./features/photosSlice";
 import { uiReducer } from "./ui/uiSlice";
 
 export const store = configureStore({
