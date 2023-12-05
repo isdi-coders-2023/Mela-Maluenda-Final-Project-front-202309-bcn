@@ -7,6 +7,10 @@ const handlers = [
   http.get(`${apiUrl}/photos`, () => {
     return HttpResponse.json(photosMock);
   }),
+
+  http.delete(`${apiUrl}/photos/:_id`, () => {
+    return HttpResponse.json({});
+  }),
 ];
 
 export default handlers;
