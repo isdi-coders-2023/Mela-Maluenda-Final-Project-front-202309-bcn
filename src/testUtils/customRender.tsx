@@ -6,7 +6,7 @@ import GlobalStyle from "../styles/GlobalStyle";
 import mainTheme from "../styles/mainTheme";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import { photosReducer } from "../store/features/photosSlice";
+import { photoReducer } from "../store/features/photosSlice";
 import { PhotosStructure } from "../store/types";
 import photosMock from "../mocks/photosMock/photosMock";
 import { uiReducer } from "../store/ui/uiSlice";
@@ -18,7 +18,7 @@ export const customRender = (
 ) => {
   const mockStore = configureStore({
     reducer: {
-      photoState: photosReducer,
+      photoState: photoReducer,
       uiState: uiReducer,
     },
     preloadedState: {
@@ -50,11 +50,11 @@ export const providerWrapper = ({ children }: PropsWithChildren) => {
 export const customRenderWithoutRouter = (children: React.ReactElement) => {
   const mockStore = configureStore({
     reducer: {
-      photosState: photosReducer,
+      photoState: photoReducer,
       uiState: uiReducer,
     },
     preloadedState: {
-      photosState: { photos: photosMock },
+      photoState: { photos: photosMock },
       uiState: { isLoading: false },
     },
   });

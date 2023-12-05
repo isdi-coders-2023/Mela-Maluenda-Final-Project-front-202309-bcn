@@ -1,5 +1,5 @@
 import photosMock from "../../mocks/photosMock/photosMock";
-import { loadPhotosActionCreator, photosReducer } from "./photosSlice";
+import { loadPhotosActionCreator, photoReducer } from "./photosSlice";
 import PhotosStateStructure from "./types";
 
 describe("Given a loadPhotos reducer", () => {
@@ -9,7 +9,7 @@ describe("Given a loadPhotos reducer", () => {
 
       const loadPhotos = photosMock;
 
-      const useReducer = photosReducer(
+      const useReducer = photoReducer(
         currentPhotoState,
         loadPhotosActionCreator(loadPhotos),
       );
