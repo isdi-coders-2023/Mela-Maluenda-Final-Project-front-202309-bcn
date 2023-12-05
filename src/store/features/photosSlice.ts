@@ -22,4 +22,4 @@ const photosSlice = createSlice({
 
 export const { loadPhotos: loadPhotosActionCreator } = photosSlice.actions;
 
-export const photosReducer = photosSlice.reducer;
+export const photoReducer = photosSlice.reducer;
