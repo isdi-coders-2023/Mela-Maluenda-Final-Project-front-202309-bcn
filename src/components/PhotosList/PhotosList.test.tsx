@@ -4,12 +4,38 @@ import PhotosList from "./PhotosList";
 import { customRender } from "../../testUtils/customRender";
 
 describe("Given a PhotosList component", () => {
-  describe("When it receives a list of photos title", () => {
+  describe("When it receives a list of photos", () => {
     test("Then it should show 'Ghost'", () => {
       const mockContest = photosMock;
       customRender(<PhotosList />, mockContest);
 
       const expectedTitle = "« Ghost »";
+
+      const photosHeadingElement = screen.getByRole("heading", {
+        name: expectedTitle,
+      });
+
+      expect(photosHeadingElement).toBeInTheDocument();
+    });
+
+    test("Then it should show 'Urban angel'", () => {
+      const mockContest = photosMock;
+      customRender(<PhotosList />, mockContest);
+
+      const expectedTitle = "« Urban angel »";
+
+      const photosHeadingElement = screen.getByRole("heading", {
+        name: expectedTitle,
+      });
+
+      expect(photosHeadingElement).toBeInTheDocument();
+    });
+
+    test("Then it should show 'Ghost'", () => {
+      const mockContest = photosMock;
+      customRender(<PhotosList />, mockContest);
+
+      const expectedTitle = "« Deep thoughts »";
 
       const photosHeadingElement = screen.getByRole("heading", {
         name: expectedTitle,

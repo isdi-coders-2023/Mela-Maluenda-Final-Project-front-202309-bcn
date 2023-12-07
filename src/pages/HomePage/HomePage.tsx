@@ -1,9 +1,15 @@
 import { useDispatch } from "react-redux";
-import HomeStyled from "./HomePageStyled";
 import { useEffect } from "react";
 import { loadPhotosActionCreator } from "../../store/features/photosSlice";
-import PhotosList from "../../components/PhotosList/PhotosList";
 import usePhotosApi from "../../hooks/usePhotosApi";
+import {
+  hideLoadingActionsCreator,
+  showLoadingActionsCreator,
+} from "../../store/ui/uiSlice";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import HomeStyled from "./HomePageStyled";
+import PhotosList from "../../components/PhotosList/PhotosList";
 
 const HomePage = (): React.ReactElement => {
   const dispatch = useDispatch();
@@ -11,8 +17,18 @@ const HomePage = (): React.ReactElement => {
 
   useEffect(() => {
     (async () => {
-      const photos = await getPhotosApi();
-      dispatch(loadPhotosActionCreator(photos.photos));
+      try {
+        dispatch(showLoadingActionsCreator());
+        const photos = await getPhotosApi();
+        dispatch(loadPhotosActionCreator(photos.photos));
+      } catch (error) {
+        toast.error("Error! Something went wrong. Try again!", {
+          position: toast.POSITION.BOTTOM_CENTER,
+          className: "toast toast-error",
+        });
+
+        dispatch(hideLoadingActionsCreator());
+      }
     })();
   }, [dispatch, getPhotosApi]);
 

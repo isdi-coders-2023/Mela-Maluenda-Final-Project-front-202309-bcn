@@ -50,6 +50,24 @@ img {
 button {
   cursor: pointer;
 }
+
+
+.toast {
+  margin-bottom: 750px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.light};
+  font-family: ${({ theme }) => theme.typography.regularFontFamily};
+  font-size: ${({ theme }) => theme.typography.regularSize};
+  border: solid 10px ${({ theme }) => theme.colors.accentLight};
+  
+  &-success {
+    background-color: ${({ theme }) => theme.colors.accentDark};
+  }
+
+  &-error {
+    background-color: ${({ theme }) => theme.colors.error};
+  }
+}
 `;
 
 export default GlobalStyle;

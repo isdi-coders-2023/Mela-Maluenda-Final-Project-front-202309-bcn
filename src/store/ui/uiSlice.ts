@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import UiStructure from "./types";
+import { UiStructure } from "./types";
 
 export const initialUiState: UiStructure = {
   isLoading: false,
@@ -35,8 +35,8 @@ const uiSlice = createSlice({
 export const {
   showLoading: showLoadingActionsCreator,
   hideLoading: hideLoadingActionsCreator,
-  showError: showErrorActionsCreator,
-  hideError: hideErrorActionsCreator,
+  showError: showErrorActionCreator,
+  hideError: hideErrorActionCreator,
 } = uiSlice.actions;
 
 export const uiReducer = uiSlice.reducer;

@@ -27,7 +27,7 @@ describe("Given the App component", () => {
     });
   });
 
-  describe("When it receives a click to the path to '/home' and it renders HomePage", () => {
+  describe("When it receives a click to the path to '/home' and it renders App", () => {
     test("Then it should show the the title: 'Street photo contest'", () => {
       const expectedTitle = "Street photo contest";
 

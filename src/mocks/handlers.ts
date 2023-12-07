@@ -3,14 +3,12 @@ import photosMock from "./photosMock/photosMock";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
-const handlers = [
-  http.get(`${apiUrl}/photos`, () => {
-    return HttpResponse.json(photosMock);
-  }),
-
-  http.delete(`${apiUrl}/photos/:_id`, () => {
-    return HttpResponse.json({});
-  }),
+export const handlers = [
+  http.get(`${apiUrl}/photos`, async () => HttpResponse.json(photosMock)),
+  http.delete(`${apiUrl}/photos/:_id`, async () => HttpResponse.json({})),
 ];
 
-export default handlers;
+export const errorHandlers = [
+  http.get(`${apiUrl}/photos`, async () => HttpResponse.error()),
+  http.delete(`${apiUrl}/photos/:_id`, async () => HttpResponse.error()),
+];

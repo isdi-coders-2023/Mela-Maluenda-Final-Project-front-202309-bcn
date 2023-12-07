@@ -1,8 +1,8 @@
 import {
-  hideErrorActionsCreator,
-  hideLoadingActionsCreator,
-  showErrorActionsCreator,
   showLoadingActionsCreator,
+  hideLoadingActionsCreator,
+  showErrorActionCreator,
+  hideErrorActionCreator,
   uiReducer,
 } from "./uiSlice";
 
@@ -12,7 +12,7 @@ describe("Given a showLoading minireducer", () => {
       const initialMockedUiState = { isLoading: true };
       const isLoadingTrue = uiReducer(
         initialMockedUiState,
-        showLoadingActionsCreator(),
+        showLoadingActionsCreator,
       );
 
       expect(isLoadingTrue).toStrictEqual(initialMockedUiState);
@@ -42,7 +42,7 @@ describe("Given a showError minireducer", () => {
 
       const isErrorTrue = uiReducer(
         initialMockedUiState,
-        showErrorActionsCreator(),
+        showErrorActionCreator(),
       );
 
       expect(isErrorTrue).toStrictEqual(finalMockedUiState);
@@ -58,7 +58,7 @@ describe("Given a hideError minireducer", () => {
 
       const isErrorFalse = uiReducer(
         initialMockedUiState,
-        hideErrorActionsCreator(),
+        hideErrorActionCreator(),
       );
 
       expect(isErrorFalse).toStrictEqual(finalMockedUiState);
