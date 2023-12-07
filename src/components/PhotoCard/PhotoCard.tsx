@@ -9,7 +9,6 @@ import { hideLoadingActionsCreator } from "../../store/ui/uiSlice";
 import Button from "../Button/Button";
 import PhotoCardStyled from "./PhotoCardStyled";
 import "react-toastify/dist/ReactToastify.css";
-import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 interface PhotosCardProps {
   photo: PhotosStructure;
