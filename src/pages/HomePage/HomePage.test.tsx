@@ -1,7 +1,9 @@
-import { screen } from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 import HomePage from "./HomePage";
 import photosMock from "../../mocks/photosMock/photosMock";
 import { customRender } from "../../testUtils/customRender";
+import server from "../../mocks/node";
+import { errorHandlers } from "../../mocks/handlers";
 
 describe("Given the HomPage component", () => {
   describe("When it is rendered", () => {
@@ -14,6 +16,19 @@ describe("Given the HomPage component", () => {
       const title = screen.getByRole("heading", { name: expectedTitle });
 
       expect(title).toBeInTheDocument();
+    });
+  });
+
+  describe("When it is rendered and an error ocurred", () => {
+    test("Then it should show the text: 'Error! Something went wrong. Try again!' as a toastify error message", async () => {
+      server.use(...errorHandlers);
+      customRender(<HomePage />, []);
+
+      const expectedToastifyError = "Error! Something went wrong. Try again!";
+
+      await waitFor(() => {
+        expect(screen.getByText(expectedToastifyError)).toBeInTheDocument();
+      });
     });
   });
 });
