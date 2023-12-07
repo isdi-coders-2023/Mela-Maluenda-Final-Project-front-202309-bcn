@@ -5,9 +5,12 @@ import {
 } from "../../store/features/photosSlice";
 import { useAppDispatch } from "../../store/hooks";
 import { PhotosStructure } from "../../store/types";
+import { hideLoadingActionsCreator } from "../../store/ui/uiSlice";
 import Button from "../Button/Button";
 import PhotoCardStyled from "./PhotoCardStyled";
-
+import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 interface PhotosCardProps {
   photo: PhotosStructure;
 }
@@ -19,11 +22,26 @@ const PhotoCard = ({
   const { deletePhoto, getPhotosApi } = usePhotosApi();
 
   const deletePhotoApi = async (id: string): Promise<void> => {
-    await deletePhoto(id);
-    dispatch(deletePhotoActionsCreator(id));
+    try {
+      const deletedPhotos = await deletePhoto(id);
+      dispatch(deletePhotoActionsCreator(id));
+      toast.success("Great! Photo successfully removed!", {
+        position: toast.POSITION.BOTTOM_CENTER,
+        className: "toast toast-success",
+      });
 
-    const photos = await getPhotosApi();
-    dispatch(loadPhotosActionCreator(photos.photos));
+      if (deletedPhotos) {
+        const photos = await getPhotosApi();
+        dispatch(loadPhotosActionCreator(photos.photos));
+      }
+    } catch {
+      toast.error("Oops! The photo cannot be deleted!", {
+        position: toast.POSITION.BOTTOM_CENTER,
+        className: "toast toast-error",
+      });
+
+      dispatch(hideLoadingActionsCreator());
+    }
   };
 
   return (
@@ -41,7 +59,7 @@ const PhotoCard = ({
         <img
           className="card__icon"
           src="/images/line.svg"
-          alt={`A yellow line`}
+          alt={`A line to indicate the more details icon`}
           width="200"
           height="2"
         />
