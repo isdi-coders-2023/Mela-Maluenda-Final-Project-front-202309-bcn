@@ -11,6 +11,10 @@ const LoadingStyled = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundDarkOpacity};
   z-index: 2;
 
+  .diafragma {
+    display: none;
+  }
+
   .loading {
     text-transform: uppercase;
     font-size: ${({ theme }) => theme.typography.mainSize};
@@ -19,7 +23,7 @@ const LoadingStyled = styled.div`
     color: ${({ theme }) => theme.colors.accentLight};
     font-weight: 900;
     text-align: center;
-    margin-top: 160px;
+    margin-top: 180px;
   }
 
   .loader {
@@ -58,6 +62,12 @@ const LoadingStyled = styled.div`
   }
 
   @media (prefers-reduced-motion) {
+    .diafragma {
+      display: block;
+    }
+    .loading {
+      margin-top: 50px;
+    }
     .loader {
       display: none;
     }
