@@ -5,6 +5,7 @@ import Loading from "../Loading/Loading";
 import { useAppSelector } from "../../store/hooks";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AddPage from "../../pages/AddPage/AddPage";
 
 const App = (): React.ReactElement => {
   const uiState = useAppSelector((state) => state.uiState);
@@ -28,6 +29,7 @@ const App = (): React.ReactElement => {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/add" element={<AddPage />} />
         </Routes>
       </main>
     </>
