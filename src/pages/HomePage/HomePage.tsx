@@ -8,7 +8,7 @@ import {
 } from "../../store/ui/uiSlice";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
-import HomeStyled from "./HomePageStyled";
+import PageStyled from "../PageStyled";
 import PhotosList from "../../components/PhotosList/PhotosList";
 
 const HomePage = (): React.ReactElement => {
@@ -33,7 +33,7 @@ const HomePage = (): React.ReactElement => {
   }, [dispatch, getPhotosApi]);
 
   return (
-    <HomeStyled className="data">
+    <PageStyled className="data">
       <section className="data__article">
         <h1 className="data__title">Street photography</h1>
         <p className="data__text">
@@ -55,7 +55,7 @@ const HomePage = (): React.ReactElement => {
         <h2 className="data__title">Street photo contest</h2>
         <PhotosList />
       </section>
-    </HomeStyled>
+    </PageStyled>
   );
 };
 
