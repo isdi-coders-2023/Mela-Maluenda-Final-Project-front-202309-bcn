@@ -1,16 +1,16 @@
 import { screen, waitFor } from "@testing-library/react";
-import photosMock from "../../mocks/photosMock/photosMock";
 import PhotoCard from "./PhotoCard";
 import { customRender } from "../../testUtils/customRender";
 import userEvent from "@testing-library/user-event";
 import { errorHandlers } from "../../mocks/handlers";
 import server from "../../mocks/node";
+import { photosMock } from "../../mocks/photosMock/photosMock";
 
 describe("Given a PhotoCard component", () => {
   describe("When it receives a 'Ghost'", () => {
     test("Then it should show 'Ghost' in a heading", () => {
       const mockContest = photosMock[0];
-      customRender(<PhotoCard photo={mockContest} />, photosMock);
+      customRender(<PhotoCard photo={mockContest} />);
 
       const expectedTitle = "« Ghost »";
 
@@ -25,7 +25,7 @@ describe("Given a PhotoCard component", () => {
       const expectedToastifySucces = "Great! Photo successfully removed!";
       const buttonText = "Delete";
 
-      customRender(<PhotoCard photo={photosMock[0]} />, []);
+      customRender(<PhotoCard photo={photosMock[0]} />);
 
       const deleteButton = screen.getByRole("button", { name: buttonText });
 
@@ -41,7 +41,7 @@ describe("Given a PhotoCard component", () => {
       const mockContest = photosMock[1];
       const photoTitle = "« Urban angel »";
 
-      customRender(<PhotoCard photo={mockContest} />, photosMock);
+      customRender(<PhotoCard photo={mockContest} />);
 
       const button = screen.getByRole("button", { name: buttonText });
       const title = screen.getByRole("heading", { name: photoTitle });
@@ -57,7 +57,7 @@ describe("Given a PhotoCard component", () => {
       const expectedToastifyError = "Oops! The photo cannot be deleted!";
       const buttonText = "Delete";
 
-      customRender(<PhotoCard photo={photosMock[0]} />, []);
+      customRender(<PhotoCard photo={photosMock[0]} />);
 
       const button = screen.getByRole("button", { name: buttonText });
 

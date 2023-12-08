@@ -1,5 +1,5 @@
 import { http, HttpResponse } from "msw";
-import photosMock from "./photosMock/photosMock";
+import { photosMock } from "./photosMock/photosMock";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 

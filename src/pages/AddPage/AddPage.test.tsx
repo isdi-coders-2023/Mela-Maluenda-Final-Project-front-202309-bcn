@@ -1,4 +1,3 @@
-import photosMock from "../../mocks/photosMock/photosMock";
 import { customRender } from "../../testUtils/customRender";
 import AddPage from "./AddPage";
 import { screen } from "@testing-library/react";
@@ -8,8 +7,7 @@ describe("Given the AddPage component", () => {
     test("Then it should show a title: 'Join the contest'", () => {
       const expectedTitle = "Join the contest";
 
-      const mockContest = photosMock;
-      customRender(<AddPage />, mockContest);
+      customRender(<AddPage />);
 
       const title = screen.getByRole("heading", { name: expectedTitle });
 
@@ -19,8 +17,7 @@ describe("Given the AddPage component", () => {
     test("Then it should show a title: 'Contest rules detail'", () => {
       const expectedTitle = "Contest rules detail";
 
-      const mockContest = photosMock;
-      customRender(<AddPage />, mockContest);
+      customRender(<AddPage />);
 
       const title = screen.getByRole("heading", { name: expectedTitle });
 

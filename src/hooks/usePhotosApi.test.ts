@@ -1,7 +1,7 @@
 import { renderHook } from "@testing-library/react";
-import photosMock from "../mocks/photosMock/photosMock";
 import usePhotosApi from "./usePhotosApi";
 import { providerWrapper } from "../testUtils/customRender";
+import { photosMock } from "../mocks/photosMock/photosMock";
 
 describe("Given a usePhotosApi hook", () => {
   describe("when it is called", () => {
