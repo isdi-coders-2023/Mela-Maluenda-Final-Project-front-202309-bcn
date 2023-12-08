@@ -1,9 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { PhotStructureWithoutId } from "../../store/types";
 import Button from "../Button/Button";
 import FormStyled from "./FormStyled";
 
-const Form = (): React.ReactElement => {
+interface FormProps {
+  onSubmit: (newPhoto: PhotStructureWithoutId) => void;
+}
+
+const Form = ({ onSubmit }: FormProps): React.ReactElement => {
   const emptyPhoto: PhotStructureWithoutId = {
     title: "",
     author: "",
@@ -14,6 +18,12 @@ const Form = (): React.ReactElement => {
     portfolioUrl: "",
     whatMadeYouClick: "",
     photoUrl: "",
+  };
+
+  const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    onSubmit(newPhoto);
   };
 
   const [newPhoto, setNewPhoto] = useState<PhotStructureWithoutId>(emptyPhoto);
@@ -30,7 +40,7 @@ const Form = (): React.ReactElement => {
   };
 
   return (
-    <FormStyled>
+    <FormStyled onSubmit={onFormSubmit}>
       <h2 className="form__title">ADD your PHOTO</h2>
       <label className="form__label" htmlFor="title">
         Title:
