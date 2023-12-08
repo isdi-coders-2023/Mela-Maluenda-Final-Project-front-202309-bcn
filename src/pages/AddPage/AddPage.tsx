@@ -42,7 +42,7 @@ const AddPage = (): React.ReactElement => {
               a. Long shot.
             </span>
             <span className="data__rules data__rules--category">
-              a. Medium shot.
+              b. Medium shot.
             </span>
           </li>
           <li className="data__rules data__text--detail">
