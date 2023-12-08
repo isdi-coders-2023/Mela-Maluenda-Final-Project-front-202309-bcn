@@ -42,6 +42,7 @@ describe("Given a PhotoCard component", () => {
       const photoTitle = "« Urban angel »";
 
       customRender(<PhotoCard photo={mockContest} />, photosMock);
+
       const button = screen.getByRole("button", { name: buttonText });
       const title = screen.getByRole("heading", { name: photoTitle });
       await userEvent.click(button);

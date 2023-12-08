@@ -5,7 +5,7 @@ import { providerWrapper } from "../testUtils/customRender";
 
 describe("Given a usePhotosApi hook", () => {
   describe("when it is called", () => {
-    test("Then it should return the information of a list of photos", async () => {
+    test("Then it should return the information of 'Ghost, Urban angel and Deep thoughts'", async () => {
       const expectedPhotos = photosMock;
 
       const {
@@ -21,7 +21,7 @@ describe("Given a usePhotosApi hook", () => {
   });
 
   describe("When it calls the deletePhoto method with a 'Urban angel' id", () => {
-    test("Then it should delete the 'Urban angel' photo from the API Rest", async () => {
+    test("Then it should delete the 'Urban angel' photo from the list of photos", async () => {
       const expectedPhotoId = photosMock[1]._id;
       const expectedEmptyObject = {};
 
