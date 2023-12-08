@@ -7,16 +7,12 @@ import mainTheme from "../styles/mainTheme";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { photoReducer } from "../store/features/photosSlice";
-import { PhotosStructure } from "../store/types";
-import photosMock from "../mocks/photosMock/photosMock";
 import { uiReducer } from "../store/ui/uiSlice";
 import { store } from "../store";
 import { ToastContainer } from "react-toastify";
+import { photosMock } from "../mocks/photosMock/photosMock";
 
-export const customRender = (
-  children: React.ReactElement,
-  photosMock: PhotosStructure[],
-) => {
+export const customRender = (children: React.ReactElement) => {
   const mockStore = configureStore({
     reducer: {
       photoState: photoReducer,

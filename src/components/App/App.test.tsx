@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import photosMock from "../../mocks/photosMock/photosMock";
+
 import App from "./App";
 import {
   customRender,
@@ -11,8 +11,7 @@ import { MemoryRouter } from "react-router-dom";
 describe("Given the App component", () => {
   describe("When it is rendered", () => {
     test("Then it should show the title 'Street photography'", () => {
-      const mockContest = photosMock;
-      customRender(<App />, mockContest);
+      customRender(<App />);
 
       const title = "Street photography";
       const link = "home";

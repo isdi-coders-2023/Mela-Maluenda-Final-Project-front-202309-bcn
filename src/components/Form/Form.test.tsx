@@ -1,4 +1,3 @@
-import photosMock from "../../mocks/photosMock/photosMock";
 import { customRender } from "../../testUtils/customRender";
 import Form from "./Form";
 import { screen } from "@testing-library/react";
@@ -8,11 +7,11 @@ describe("Given a Form component", () => {
     test("Then it should show a form with a title: 'Title'", () => {
       const expectedLabel = "Title:";
 
-      customRender(<Form />, photosMock);
+      customRender(<Form />);
 
-      const labelText = screen.getByLabelText(expectedLabel);
+      const inputText = screen.getByLabelText(expectedLabel);
 
-      expect(labelText).toBeInTheDocument();
+      expect(inputText).toBeInTheDocument();
     });
   });
 });
