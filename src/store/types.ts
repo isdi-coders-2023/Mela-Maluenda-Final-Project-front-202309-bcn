@@ -1,5 +1,3 @@
-export type Category = "Long shot" | "Medium shot";
-
 export interface PhotosStructure {
   _id: string;
   title: string;
@@ -7,7 +5,7 @@ export interface PhotosStructure {
   year: string;
   location: string;
   publicSpace: string;
-  category: Category;
+  category: string;
   portfolioUrl: string;
   whatMadeYouClick: string;
   photoUrl: string;
