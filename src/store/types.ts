@@ -12,3 +12,5 @@ export interface PhotosStructure {
   whatMadeYouClick: string;
   photoUrl: string;
 }
+
+export type PhotStructureWithoutId = Omit<PhotosStructure, "_id">;
