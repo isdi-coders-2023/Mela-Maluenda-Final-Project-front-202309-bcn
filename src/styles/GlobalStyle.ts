@@ -53,7 +53,7 @@ button {
 
 
 .toast {
-  margin-bottom: 750px;
+  margin-bottom: 550px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.light};
   font-family: ${({ theme }) => theme.typography.regularFontFamily};

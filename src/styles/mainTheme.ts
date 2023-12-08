@@ -11,10 +11,12 @@ const mainTheme: DefaultTheme = {
     backgroundDark: "#384045",
     backgroundDarkOpacity: "#384045cc",
     mainText: "#213327",
+    input: "#d9d9d9",
   },
   typography: {
     mainFontFamily: "'Playfair Display', serif",
     regularFontFamily: "'Nunito Sans', sans-serif",
+    superMainSize: "1.5rem",
     mainSize: "1.375rem",
     titleSuperSize: "1.6rem",
     titleSize: "1.25rem",
