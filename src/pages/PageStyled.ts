@@ -1,16 +1,12 @@
 import styled from "styled-components";
 
 const PageStyled = styled.div`
-  padding: 20px 20px 0 20px;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .data {
-    &__article {
-      padding-bottom: 30px;
-    }
-
     &__title {
       text-align: center;
       margin: 0 auto;
@@ -50,18 +46,18 @@ const PageStyled = styled.div`
     }
 
     &__ordered {
-      padding: 20px;
+      padding: 15px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 250px;
+      width: 230px;
     }
 
     &__detail {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 100vw;
+      width: 304px;
       background-color: ${({ theme }) => theme.colors.accentLight};
     }
   }
@@ -72,8 +68,24 @@ const PageStyled = styled.div`
         width: 350px;
       }
 
+      &__detail {
+        width: 396px;
+      }
+
       &__ordered {
-        width: 350px;
+        width: 300px;
+      }
+    }
+  }
+
+  @media (min-width: 520px) {
+    .data {
+      &__detail {
+        width: 502px;
+      }
+
+      &__ordered {
+        width: 400px;
       }
     }
   }
@@ -91,8 +103,12 @@ const PageStyled = styled.div`
         font-size: ${({ theme }) => theme.typography.titleSize};
       }
 
-      &__ordered {
+      &__detail {
         width: 600px;
+      }
+
+      &__ordered {
+        width: 490px;
         font-size: ${({ theme }) => theme.typography.titleSize};
       }
     }
@@ -111,8 +127,12 @@ const PageStyled = styled.div`
         font-size: ${({ theme }) => theme.typography.titleSize};
       }
 
+      &__detail {
+        width: 970px;
+      }
+
       &__ordered {
-        width: 900px;
+        width: 800px;
         font-size: ${({ theme }) => theme.typography.titleSize};
       }
     }

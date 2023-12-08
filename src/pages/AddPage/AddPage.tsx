@@ -1,3 +1,4 @@
+import Form from "../../components/Form/Form";
 import PageStyled from "../PageStyled";
 
 const AddPage = (): React.ReactElement => {
@@ -21,7 +22,7 @@ const AddPage = (): React.ReactElement => {
           </li>
         </ul>
       </section>
-
+      <Form />
       <section className="data__detail">
         <h2 className="data__title data__title--detail">
           Contest rules detail

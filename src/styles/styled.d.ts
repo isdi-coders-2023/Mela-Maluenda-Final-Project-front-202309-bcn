@@ -12,10 +12,12 @@ declare module "styled-components" {
       backgroundDark: string;
       backgroundDarkOpacity: string;
       mainText: string;
+      input: string;
     };
     typography: {
       mainFontFamily: string;
       regularFontFamily: string;
+      superMainSize: string;
       mainSize: string;
       titleSuperSize: string;
       titleSize: string;
