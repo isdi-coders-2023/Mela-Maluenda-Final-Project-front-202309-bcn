@@ -10,6 +10,7 @@ import Button from "../Button/Button";
 import PhotoCardStyled from "./PhotoCardStyled";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+
 interface PhotosCardProps {
   photo: PhotosStructure;
 }
@@ -20,10 +21,10 @@ const PhotoCard = ({
   const dispatch = useAppDispatch();
   const { deletePhoto, getPhotosApi } = usePhotosApi();
 
-  const deletePhotoApi = async (id: string): Promise<void> => {
+  const deletePhotoById = async () => {
     try {
-      const deletedPhotos = await deletePhoto(id);
-      dispatch(deletePhotoActionsCreator(id));
+      const deletedPhotos = await deletePhoto(_id);
+      dispatch(deletePhotoActionsCreator(_id));
       toast.success("Great! Photo successfully removed!", {
         position: toast.POSITION.BOTTOM_CENTER,
         className: "toast toast-success",
@@ -48,7 +49,7 @@ const PhotoCard = ({
       <img
         className="card__image"
         src={photoUrl}
-        alt={`${category}`}
+        alt={category}
         width="284"
         height="187"
       />
@@ -70,17 +71,13 @@ const PhotoCard = ({
           height="27"
         />
       </div>
-      <span className="card__subtitle">{`${location}, ${year}`}</span>
-      <span className="card__subtitle">{`${category}`}</span>
+      <span className="card__subtitle">
+        {location}, {year}
+      </span>
+      <span className="card__subtitle">{category}</span>
       <div className="card__button">
-        <Button type={"button"} text={"Modify"} />
-        <Button
-          type={"submit"}
-          actionOnClick={() => {
-            deletePhotoApi(_id);
-          }}
-          text={"Delete"}
-        />
+        <Button type="button" text="Modify" />
+        <Button type="submit" actionOnClick={deletePhotoById} text="Delete" />
       </div>
     </PhotoCardStyled>
   );
