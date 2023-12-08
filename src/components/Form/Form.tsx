@@ -59,9 +59,9 @@ const Form = (): React.ReactElement => {
       <input className="form__input" required type="url" id="photo" />
       <div className="form__button">
         <Button
-          className={"butto button__form"}
-          type={"submit"}
-          text={"add photo"}
+          className="button button__form"
+          type="submit"
+          text="add photo"
         />
       </div>
     </FormStyled>

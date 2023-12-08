@@ -10,7 +10,7 @@ const Loading = (): React.ReactElement => {
         width="192"
         height="192"
       />
-      <span className="loader"></span>
+      <span className="loader" />
       <span className="loading">Loading ...</span>
     </LoadingStyled>
   );
