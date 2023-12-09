@@ -46,4 +46,45 @@ describe("Given a Form component", () => {
       expect(actionOnClick).toHaveBeenCalled();
     });
   });
+
+  describe("When it is rendered and the user fills all the inputs and click the 'add photo' button", () => {
+    test("Then it should call its actionOnClick function", async () => {
+      const actionOnClick = vi.fn();
+      const expectedButtonText = "add photo";
+
+      const stringLabelText = [
+        "Title:",
+        "Author:",
+        "Location:",
+        "Public space:",
+        "Category:",
+        "Portfolio url:",
+        "What made you click:",
+        "Add the image url:",
+      ];
+      const numberLabelText = ["Year:"];
+      const urlInput = "http://www.eldelasfotos.com";
+      const yearInput = 2022;
+
+      customRender(<Form onSubmit={actionOnClick} />);
+
+      for (const labelText of stringLabelText) {
+        const inputElemet = screen.getByLabelText(labelText);
+        await userEvent.type(inputElemet, urlInput);
+      }
+
+      for (const labelText of numberLabelText) {
+        const inputElement = screen.getByLabelText(labelText);
+        await userEvent.type(inputElement, yearInput.toString());
+      }
+
+      const formButtonElement = screen.getByRole("button", {
+        name: expectedButtonText,
+      });
+
+      await userEvent.click(formButtonElement);
+
+      await expect(actionOnClick).toHaveBeenCalled();
+    });
+  });
 });

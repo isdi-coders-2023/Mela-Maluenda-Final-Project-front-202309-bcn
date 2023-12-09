@@ -59,6 +59,12 @@ button {
   font-family: ${({ theme }) => theme.typography.regularFontFamily};
   font-size: ${({ theme }) => theme.typography.regularSize};
   border: solid 10px ${({ theme }) => theme.colors.accentLight};
+  .Toastify__close-button {
+        color: ${({ theme }) => theme.colors.light};
+      }
+  .Toastify__progress-bar {
+        background-color: ${({ theme }) => theme.colors.light};
+      }
   
   &-success {
     background-color: ${({ theme }) => theme.colors.accentDark};

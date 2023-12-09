@@ -2,7 +2,7 @@ export interface PhotosStructure {
   _id: string;
   title: string;
   author: string;
-  year: string;
+  year: number;
   location: string;
   publicSpace: string;
   category: string;
@@ -11,4 +11,4 @@ export interface PhotosStructure {
   photoUrl: string;
 }
 
-export type PhotStructureWithoutId = Omit<PhotosStructure, "_id">;
+export type PhotoStructureWithoutId = Omit<PhotosStructure, "_id">;
