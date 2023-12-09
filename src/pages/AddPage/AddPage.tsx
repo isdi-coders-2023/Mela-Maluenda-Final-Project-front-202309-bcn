@@ -1,7 +1,10 @@
 import Form from "../../components/Form/Form";
+import usePhotosApi from "../../hooks/usePhotosApi";
 import PageStyled from "../PageStyled";
 
 const AddPage = (): React.ReactElement => {
+  const { addPhoto } = usePhotosApi();
+
   return (
     <PageStyled>
       <section className="data__article">
@@ -22,7 +25,7 @@ const AddPage = (): React.ReactElement => {
           </li>
         </ul>
       </section>
-      <Form onSubmit={() => {}} />
+      <Form onSubmit={addPhoto} />
       <section className="data__detail">
         <h2 className="data__title data__title--detail">
           Contest rules detail
