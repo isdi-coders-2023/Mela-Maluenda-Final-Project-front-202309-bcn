@@ -29,7 +29,10 @@ const photosSlice = createSlice({
       ),
     }),
 
-    addPhoto: (currentState, action: PayloadAction<PhotosStructure>) => ({
+    addPhoto: (
+      currentState,
+      action: PayloadAction<PhotosStructure>,
+    ): PhotosStateStructure => ({
       ...currentState,
       photos: [...currentState.photos, action.payload],
     }),

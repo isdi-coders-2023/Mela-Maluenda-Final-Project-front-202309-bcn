@@ -78,7 +78,33 @@ const usePhotosApi = () => {
     [dispatch, navigate],
   );
 
-  return { getPhotosApi, deletePhoto: deletePhoto, addPhoto };
+  const loadSelectPhoto = useCallback(
+    async (id: string): Promise<PhotosStructure | void> => {
+      try {
+        dispatch(showLoadingActionsCreator());
+
+        const {
+          data: { photo },
+        } = await axios.get<{ photo: PhotosStructure }>(`/photos/${id}`);
+
+        dispatch(hideLoadingActionsCreator());
+        return photo;
+      } catch {
+        dispatch(hideLoadingActionsCreator());
+
+        toast.error(
+          "Sorry! It's not possible to see the details photo, right now.",
+          {
+            position: toast.POSITION.BOTTOM_CENTER,
+            className: "toast toast-error",
+          },
+        );
+      }
+    },
+    [dispatch],
+  );
+
+  return { getPhotosApi, deletePhoto: deletePhoto, addPhoto, loadSelectPhoto };
 };
 
 export default usePhotosApi;
