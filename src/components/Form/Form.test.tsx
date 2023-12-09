@@ -48,7 +48,7 @@ describe("Given a Form component", () => {
   });
 
   describe("When it is rendered and the user fills all the inputs and click the 'add photo' button", () => {
-    test.only("Then it should call its actionOnClick function", async () => {
+    test("Then it should call its actionOnClick function", async () => {
       const actionOnClick = vi.fn();
       const expectedButtonText = "add photo";
 
