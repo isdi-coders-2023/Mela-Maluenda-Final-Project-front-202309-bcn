@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { PhotStructureWithoutId } from "../../store/types";
+import { PhotoStructureWithoutId } from "../../store/types";
 import Button from "../Button/Button";
 import FormStyled from "./FormStyled";
 
 interface FormProps {
-  onSubmit: (newPhoto: PhotStructureWithoutId) => void;
+  onSubmit: (newPhoto: PhotoStructureWithoutId) => void;
 }
 
 const Form = ({ onSubmit }: FormProps): React.ReactElement => {
-  const emptyPhoto: PhotStructureWithoutId = {
+  const emptyPhoto: PhotoStructureWithoutId = {
     title: "",
     author: "",
-    year: "",
+    year: 0,
     location: "",
     publicSpace: "",
     category: "Long shot",
@@ -25,7 +25,7 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
     onSubmit(newPhoto);
   };
 
-  const [newPhoto, setNewPhoto] = useState<PhotStructureWithoutId>(emptyPhoto);
+  const [newPhoto, setNewPhoto] = useState<PhotoStructureWithoutId>(emptyPhoto);
 
   const onChangeData = (
     event: React.ChangeEvent<
@@ -39,7 +39,7 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
   };
 
   return (
-    <FormStyled onSubmit={onFormSubmit}>
+    <FormStyled onSubmit={onFormSubmit} autoComplete="off">
       <h2 className="form__title">ADD your PHOTO</h2>
       <label className="form__label" htmlFor="title">
         Title:
@@ -61,16 +61,17 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
         id="author"
         onChange={onChangeData}
       />
-      <label className="form__label" htmlFor="date">
+      <label className="form__label" htmlFor="year">
         Month and year:
       </label>
       <input
         className="form__input"
         required
-        type="month"
-        id="date"
-        min="2000-01"
-        max="2023-12"
+        type="number"
+        id="year"
+        step={1}
+        min={2000}
+        max={2023}
         onChange={onChangeData}
       />
       <label className="form__label" htmlFor="location">
@@ -83,14 +84,14 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
         id="location"
         onChange={onChangeData}
       />
-      <label className="form__label" htmlFor="space">
+      <label className="form__label" htmlFor="publicSpace">
         Public space:
       </label>
       <input
         className="form__input"
         required
         type="text"
-        id="space"
+        id="publicSpace"
         onChange={onChangeData}
       />
       <div className="form__category">
@@ -106,33 +107,33 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="">Medium shot</option>
         </select>
       </div>
-      <label className="form__label" htmlFor="portfolio">
+      <label className="form__label" htmlFor="portfolioUrl">
         Portfolio url:
       </label>
       <input
         className="form__input"
         required
         type="url"
-        id="portfolio"
+        id="portfolioUrl"
         onChange={onChangeData}
       />
-      <label className="form__label" htmlFor="description">
+      <label className="form__label" htmlFor="whatMadeYouClick">
         What made you click:
       </label>
       <textarea
         className="form__description"
-        id="description"
+        id="whatMadeYouClick"
         placeholder="A few lines explaining something about how did you feel or thought when you took that image."
         onChange={onChangeData}
       ></textarea>
-      <label className="form__label" htmlFor="photo">
+      <label className="form__label" htmlFor="photoUrl">
         Add the image url:
       </label>
       <input
         className="form__input"
         required
         type="url"
-        id="photo"
+        id="photoUrl"
         onChange={onChangeData}
       />
       <div className="form__button">
