@@ -4,6 +4,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export const initialPhotosState: PhotosStateStructure = {
   photos: [],
+  selectedPhoto: {} as PhotosStructure,
 };
 
 const photosSlice = createSlice({
@@ -32,6 +33,14 @@ const photosSlice = createSlice({
       ...currentState,
       photos: [...currentState.photos, action.payload],
     }),
+
+    loadSelectPhoto: (
+      currentState,
+      action: PayloadAction<PhotosStructure>,
+    ) => ({
+      ...currentState,
+      selectedPhoto: action.payload,
+    }),
   },
 });
 
@@ -39,6 +48,7 @@ export const {
   loadPhotos: loadPhotosActionCreator,
   deletePhoto: deletePhotoActionsCreator,
   addPhoto: addPhotoActionsCreator,
+  loadSelectPhoto: loadSelectPhotoActionsCreator,
 } = photosSlice.actions;
 
 export const photoReducer = photosSlice.reducer;
