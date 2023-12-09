@@ -22,7 +22,6 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
 
   const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     onSubmit(newPhoto);
   };
 
