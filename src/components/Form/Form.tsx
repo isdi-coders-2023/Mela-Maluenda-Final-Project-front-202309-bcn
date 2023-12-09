@@ -62,7 +62,7 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
         onChange={onChangeData}
       />
       <label className="form__label" htmlFor="year">
-        Month and year:
+        Year:
       </label>
       <input
         className="form__input"
