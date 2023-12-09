@@ -9,10 +9,16 @@ export const handlers = [
   http.post(`${apiUrl}/photos/add`, async () =>
     HttpResponse.json({ photo: photoAddMock[3] }),
   ),
+  http.get(`${apiUrl}/photos/656366e0e627443259cf3cee`, async () =>
+    HttpResponse.json({ photo: photoAddMock[3] }),
+  ),
 ];
 
 export const errorHandlers = [
   http.get(`${apiUrl}/photos`, async () => HttpResponse.error()),
   http.delete(`${apiUrl}/photos/:_id`, async () => HttpResponse.error()),
   http.post(`${apiUrl}/photos/add`, async () => HttpResponse.error()),
+  http.get(`${apiUrl}/photos/656366e0e627443259cf3cee`, async () =>
+    HttpResponse.error(),
+  ),
 ];
