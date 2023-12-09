@@ -11,6 +11,7 @@ import { uiReducer } from "../store/ui/uiSlice";
 import { store } from "../store";
 import { ToastContainer } from "react-toastify";
 import { photosMock } from "../mocks/photosMock/photosMock";
+import { PhotosStructure } from "../store/types";
 
 export const customRender = (children: React.ReactElement) => {
   const mockStore = configureStore({
@@ -19,10 +20,11 @@ export const customRender = (children: React.ReactElement) => {
       uiState: uiReducer,
     },
     preloadedState: {
-      photoState: { photos: photosMock },
-      uiState: {
-        isLoading: false,
+      photoState: {
+        photos: photosMock,
+        selectedPhoto: {} as PhotosStructure,
       },
+      uiState: { isLoading: false },
     },
   });
 
@@ -54,10 +56,11 @@ export const customRenderWithoutRouter = (children: React.ReactElement) => {
       uiState: uiReducer,
     },
     preloadedState: {
-      photoState: { photos: photosMock },
-      uiState: {
-        isLoading: false,
+      photoState: {
+        photos: photosMock,
+        selectedPhoto: {} as PhotosStructure,
       },
+      uiState: { isLoading: false },
     },
   });
 

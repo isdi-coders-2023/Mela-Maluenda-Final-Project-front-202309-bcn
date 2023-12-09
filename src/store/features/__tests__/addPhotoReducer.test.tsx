@@ -8,7 +8,10 @@ describe("Given a addPhoto miniredcer", () => {
     test("Then it should return the same list of photos with the photo Ghost with id in it", () => {
       const mockList = photosMock;
       const mockaddPhoto = photoAddMock;
-      const initialState: PhotosStateStructure = { photos: mockList };
+      const initialState: PhotosStateStructure = {
+        photos: mockList,
+        selectedPhoto: {} as PhotosStructure,
+      };
       const newPhoto: PhotosStructure = mockaddPhoto[3];
 
       const currentPhotosState = photoReducer(
