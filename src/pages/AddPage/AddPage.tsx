@@ -22,7 +22,7 @@ const AddPage = (): React.ReactElement => {
           </li>
         </ul>
       </section>
-      <Form />
+      <Form onSubmit={() => {}} />
       <section className="data__detail">
         <h2 className="data__title data__title--detail">
           Contest rules detail
