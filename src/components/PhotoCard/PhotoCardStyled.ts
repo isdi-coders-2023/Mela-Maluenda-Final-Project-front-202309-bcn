@@ -43,6 +43,8 @@ const PhotoCardStyled = styled.article`
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
 
     &__subtitle {

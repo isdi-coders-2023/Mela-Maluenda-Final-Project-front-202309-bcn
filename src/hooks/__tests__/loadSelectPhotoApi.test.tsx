@@ -1,14 +1,14 @@
 import { MemoryRouter } from "react-router-dom";
-import { photoAddMock } from "../mocks/photosMock/photosMock";
+import { photoAddMock } from "../../mocks/photosMock/photosMock";
 import {
   customRenderWithoutRouter,
   providerWrapper,
-} from "../testUtils/customRender";
-import App from "../components/App/App";
-import usePhotosApi from "./usePhotosApi";
+} from "../../testUtils/customRender";
+import App from "../../components/App/App";
+import usePhotosApi from "../usePhotosApi";
 import { renderHook, screen } from "@testing-library/react";
-import { errorHandlers } from "../mocks/handlers";
-import server from "../mocks/node";
+import { errorHandlers } from "../../mocks/handlers";
+import server from "../../mocks/node";
 
 describe("Given a usePhotosApi hook", () => {
   const newPhoto = photoAddMock[3];

@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
-import PageStyled from "../PageStyled";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import usePhotosApi from "../../hooks/usePhotosApi";
 import { useEffect } from "react";
 import { loadSelectPhotoActionsCreator } from "../../store/features/photosSlice";
 import { PhotosStructure } from "../../store/types";
+import DetailsPageStyled from "./DetailsPageStyled";
 
 const DetailsPage = (): React.ReactElement => {
   const { photoId } = useParams();
@@ -24,7 +24,7 @@ const DetailsPage = (): React.ReactElement => {
   }, [dispatch, photoId, loadSelectPhoto]);
 
   return (
-    <PageStyled>
+    <DetailsPageStyled>
       <h1 className="details__title">{`« ${selectPhoto.title} »`}</h1>
       <div className="details__container">
         <img
@@ -36,22 +36,24 @@ const DetailsPage = (): React.ReactElement => {
         />
       </div>
       <article className="details__article">
-        <h3 className="card__title">{selectPhoto.author}</h3>
+        <h3 className="details__title details__title--accent">
+          {selectPhoto.author}
+        </h3>
         <ul className="details__properties">
-          <li className="details__property">{`Year ${selectPhoto.year}`}</li>
-          <li className="details__property">{`Location ${selectPhoto.location}`}</li>
+          <li className="details__property">{`Year: ${selectPhoto.year}`}</li>
+          <li className="details__property">{`Location: ${selectPhoto.location}`}</li>
           <li className="details__property">{`Public space: ${selectPhoto.publicSpace}`}</li>
           <li className="details__property">{`Category: ${selectPhoto.category}`}</li>
           <li className="details__property">{`Portfolio: ${selectPhoto.portfolioUrl}`}</li>
           <li className="details__property">What made you click:</li>
+          <p className="details__description">{selectPhoto.whatMadeYouClick}</p>
         </ul>
-        <p className="details__description">{selectPhoto.whatMadeYouClick}</p>
-        <div className="card__button">
+        <div className="details__button">
           <Button type="button" text="Modify" />
           <Button type="submit" text="Delete" />
         </div>
       </article>
-    </PageStyled>
+    </DetailsPageStyled>
   );
 };
 
