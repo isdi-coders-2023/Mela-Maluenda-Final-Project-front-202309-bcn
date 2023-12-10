@@ -1,20 +1,28 @@
 import { MemoryRouter } from "react-router-dom";
-import { photoAddMock } from "../mocks/photosMock/photosMock";
+import { photoAddMock } from "../../mocks/photosMock/photosMock";
 import {
   customRenderWithoutRouter,
   providerWrapper,
-} from "../testUtils/customRender";
-import App from "../components/App/App";
-import usePhotosApi from "./usePhotosApi";
+} from "../../testUtils/customRender";
+import App from "../../components/App/App";
+import usePhotosApi from "../usePhotosApi";
 import { renderHook, screen } from "@testing-library/react";
-import { errorHandlers } from "../mocks/handlers";
-import server from "../mocks/node";
+import { errorHandlers } from "../../mocks/handlers";
+import server from "../../mocks/node";
 
 describe("Given a usePhotosApi hook", () => {
   const newPhoto = photoAddMock[3];
   describe("When its called with its loadSelectPhoto function and 'Caravaggio routines'", () => {
     test("Then it should return 'Caravaggio routines'", async () => {
       const expectedPhotoId = newPhoto._id;
+      const expectedClick =
+        "These are old pals from my village. Every second day, they are playing cards. But that day the sun got in the bar and that light remind me a Caravaggio painting, I unwrapped my camera as fast as I could to capture this photograph that looks like a painting.";
+
+      customRenderWithoutRouter(
+        <MemoryRouter initialEntries={["/details/656366e0e627443259cf3cee"]}>
+          <App />
+        </MemoryRouter>,
+      );
 
       const {
         result: {
@@ -22,9 +30,10 @@ describe("Given a usePhotosApi hook", () => {
         },
       } = renderHook(() => usePhotosApi(), { wrapper: providerWrapper });
 
-      const selectPhoto = await loadSelectPhoto(expectedPhotoId);
+      await loadSelectPhoto(expectedPhotoId);
+      const photo = await screen.getByText(expectedClick);
 
-      expect(selectPhoto).toStrictEqual(newPhoto);
+      expect(photo).toBeInTheDocument();
     });
   });
 

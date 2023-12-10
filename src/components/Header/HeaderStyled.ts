@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  padding-top: 30px;
+  padding-top: 25px;
 
   .head {
     &__banner {
-      background-image: url("./images/banner600.webp");
+      background-image: url("/images/banner600.webp");
       height: 140px;
       background-size: cover;
       background-position: center;
@@ -25,7 +25,7 @@ const HeaderStyled = styled.header`
   @media (min-width: 430px) {
     .head {
       &__banner {
-        background-image: url("./images/banner800.webp");
+        background-image: url("/images/banner800.webp");
         height: 160px;
       }
     }
@@ -35,7 +35,7 @@ const HeaderStyled = styled.header`
     padding-top: 40px;
     .head {
       &__banner {
-        background-image: url("./images/banner800.webp");
+        background-image: url("/images/banner800.webp");
         height: 280px;
       }
 

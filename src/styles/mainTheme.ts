@@ -8,6 +8,7 @@ const mainTheme: DefaultTheme = {
     accentLight: "#fcd35a",
     accentDark: "#465e4f",
     backgroundLight: "#688086",
+    backgroundLightOpacity: "#68808630",
     backgroundDark: "#384045",
     backgroundDarkOpacity: "#384045cc",
     mainText: "#213327",
