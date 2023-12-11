@@ -20,7 +20,7 @@ const DetailsPageStyled = styled.div`
 
     &__container {
       display: flex;
-      padding: 20px 0 25px 0;
+      padding: 10px 0 25px 0;
       justify-content: center;
     }
 
@@ -33,6 +33,7 @@ const DetailsPageStyled = styled.div`
     &__article {
       padding: 10px 0 20px 0;
       margin: 0 auto;
+      margin-bottom: 20px;
       width: 300px;
       border-radius: 14px 14px 15px 13px;
       background-color: ${({ theme }) => theme.colors.backgroundLightOpacity};

@@ -18,6 +18,7 @@ declare module "styled-components" {
     typography: {
       mainFontFamily: string;
       regularFontFamily: string;
+      superSize: string;
       superMainSize: string;
       mainSize: string;
       titleSuperSize: string;
