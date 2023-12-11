@@ -17,6 +17,7 @@ const mainTheme: DefaultTheme = {
   typography: {
     mainFontFamily: "'Playfair Display', serif",
     regularFontFamily: "'Nunito Sans', sans-serif",
+    superSize: "2rem",
     superMainSize: "1.5rem",
     mainSize: "1.375rem",
     titleSuperSize: "1.6rem",

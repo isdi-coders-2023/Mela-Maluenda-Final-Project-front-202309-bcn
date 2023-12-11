@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const PageStyled = styled.div`
-  padding: 20px 0;
+  padding: 20px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;

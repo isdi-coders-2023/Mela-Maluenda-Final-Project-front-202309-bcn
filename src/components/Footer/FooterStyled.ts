@@ -3,7 +3,6 @@ import styled from "styled-components";
 const FooterStyled = styled.div`
   padding-top: 15px;
   height: 50px;
-  margin-top: 20px;
   background-color: ${({ theme }) => theme.colors.backgroundDark};
 
   .footer {
