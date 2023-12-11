@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import AddPage from "../../pages/AddPage/AddPage";
 import DetailsPage from "../../pages/DetailsPage/DetailsPage";
 import Footer from "../Footer/Footer";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 
 const App = (): React.ReactElement => {
   const uiState = useAppSelector((state) => state.uiState);
@@ -33,6 +34,8 @@ const App = (): React.ReactElement => {
           <Route path="/home" element={<HomePage />} />
           <Route path="/add" element={<AddPage />} />
           <Route path="/details/:photoId" element={<DetailsPage />} />
+          <Route path="/*" element={<NotFoundPage />} />
+          <Route path="/error-page" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />
