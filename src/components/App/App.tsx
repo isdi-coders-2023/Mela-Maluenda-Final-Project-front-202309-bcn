@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AddPage from "../../pages/AddPage/AddPage";
 import DetailsPage from "../../pages/DetailsPage/DetailsPage";
+import Footer from "../Footer/Footer";
 
 const App = (): React.ReactElement => {
   const uiState = useAppSelector((state) => state.uiState);
@@ -34,6 +35,7 @@ const App = (): React.ReactElement => {
           <Route path="/details/:photoId" element={<DetailsPage />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 };
