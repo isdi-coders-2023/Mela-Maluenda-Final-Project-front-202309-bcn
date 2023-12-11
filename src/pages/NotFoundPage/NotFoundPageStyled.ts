@@ -36,8 +36,18 @@ const NotFoundPageStyled = styled.div`
     }
 
     &__button {
+      width: 180px;
+      height: 45px;
+      color: ${({ theme }) => theme.colors.lighter};
+      background-color: ${({ theme }) => theme.colors.accentDark};
+      font-family: ${({ theme }) => theme.typography.mainFontFamily};
+      font-size: ${({ theme }) => theme.typography.regularSize};
+      font-weight: 400;
+      border-radius: 15px;
+
       &--home {
-        padding: 10px 30px 25px 30px;
+        text-align: center;
+        padding: 10px 30px;
         width: 160px;
         background-color: ${({ theme }) => theme.colors.error};
         text-transform: uppercase;

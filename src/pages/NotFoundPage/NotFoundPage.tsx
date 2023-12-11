@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Button from "../../components/Button/Button";
 import NotFoundPageStyled from "./NotFoundPageStyled";
 
 const NotFoundPage = (): React.ReactElement => {
@@ -16,12 +15,8 @@ const NotFoundPage = (): React.ReactElement => {
       <p className="not__message">
         We are unable to load the page at this time.
       </p>
-      <Link to={"/home/"}>
-        <Button
-          className="not__button not__button--home"
-          type="button"
-          text="Go home"
-        />
+      <Link className="not__button not__button--home" to={"/home/"}>
+        Go home
       </Link>
     </NotFoundPageStyled>
   );
