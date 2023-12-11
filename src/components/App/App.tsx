@@ -35,7 +35,6 @@ const App = (): React.ReactElement => {
           <Route path="/add" element={<AddPage />} />
           <Route path="/details/:photoId" element={<DetailsPage />} />
           <Route path="/*" element={<NotFoundPage />} />
-          <Route path="/error-page" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />

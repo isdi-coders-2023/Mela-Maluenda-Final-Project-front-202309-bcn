@@ -33,7 +33,8 @@ const FormStyled = styled.form`
 
     &__input {
       width: 238px;
-      padding: 15px 30px;
+      padding: 15px;
+      text-align: start;
       margin: 0 auto;
       background-color: ${({ theme }) => theme.colors.input};
       border-radius: 7px;
