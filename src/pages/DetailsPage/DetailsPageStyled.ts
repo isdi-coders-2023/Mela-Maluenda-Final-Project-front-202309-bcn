@@ -3,22 +3,24 @@ import styled from "styled-components";
 const DetailsPageStyled = styled.div`
   .details {
     &__title {
-      text-align: center;
       margin: 0 auto;
-      padding: 15px;
-      width: 230px;
+      width: 300px;
       font-weight: 400;
+      padding: 30px 0 10px 0;
+      text-align: center;
+      border-bottom: solid 2px ${({ theme }) => theme.colors.accentLight};
       font-size: ${({ theme }) => theme.typography.mainSize};
       font-family: ${({ theme }) => theme.typography.mainFontFamily};
 
       &--accent {
+        padding: 15px;
         border-bottom: solid 2px ${({ theme }) => theme.colors.light};
       }
     }
 
     &__container {
       display: flex;
-      padding-bottom: 25px;
+      padding: 20px 0 25px 0;
       justify-content: center;
     }
 

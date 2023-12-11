@@ -25,7 +25,7 @@ const DetailsPage = (): React.ReactElement => {
 
   return (
     <DetailsPageStyled>
-      <h1 className="details__title">{`« ${selectPhoto.title} »`}</h1>
+      <h1 className="details__title">Photo details</h1>
       <div className="details__container">
         <img
           className="details__image"
@@ -37,16 +37,21 @@ const DetailsPage = (): React.ReactElement => {
       </div>
       <article className="details__article">
         <h3 className="details__title details__title--accent">
-          {selectPhoto.author}
+          {`« ${selectPhoto.title} »`}
         </h3>
         <ul className="details__properties">
+          <li className="details__property">{`Author: ${selectPhoto.author}`}</li>
           <li className="details__property">{`Year: ${selectPhoto.year}`}</li>
           <li className="details__property">{`Location: ${selectPhoto.location}`}</li>
           <li className="details__property">{`Public space: ${selectPhoto.publicSpace}`}</li>
           <li className="details__property">{`Category: ${selectPhoto.category}`}</li>
           <li className="details__property">{`Portfolio: ${selectPhoto.portfolioUrl}`}</li>
           <li className="details__property">What made you click:</li>
-          <p className="details__description">{selectPhoto.whatMadeYouClick}</p>
+          <li className="details__property">
+            <p className="details__description">
+              {selectPhoto.whatMadeYouClick}
+            </p>
+          </li>
         </ul>
         <div className="details__button">
           <Button type="button" text="Modify" />
