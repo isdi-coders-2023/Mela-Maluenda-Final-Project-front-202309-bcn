@@ -36,9 +36,9 @@ const DetailsPage = (): React.ReactElement => {
         />
       </div>
       <article className="details__article">
-        <h3 className="details__title details__title--accent">
+        <h2 className="details__title details__title--accent">
           {`« ${selectPhoto.title} »`}
-        </h3>
+        </h2>
         <ul className="details__properties">
           <li className="details__property">{`Author: ${selectPhoto.author}`}</li>
           <li className="details__property">{`Year: ${selectPhoto.year}`}</li>
