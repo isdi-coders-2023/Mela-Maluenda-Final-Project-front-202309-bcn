@@ -56,6 +56,20 @@ export const caravaggioRoutinesMock = {
   photoUrl: "https://i.ibb.co/tm1jNMY/caravaggio.webp",
 };
 
+export const modifiedDeepThoughtsMock = {
+  _id: "6563642be627443259cf3ce8",
+  title: "Deep thoughts",
+  author: "Matt stuart",
+  year: 2012,
+  location: "Antártida",
+  publicSpace: "Bus station",
+  category: "Medium shot",
+  portfolioUrl: "https://www.mattstuart.com/",
+  whatMadeYouClick:
+    "I am really interested in emotions. In the same picture we have someone laughing and crying, both extremes taking place in the same frame, love it!",
+  photoUrl: "https://i.ibb.co/Zz7VMfC/deep-thoughts.webp",
+};
+
 export const photosMock: PhotosStructure[] = [
   ghostMock,
   urbanAngelMock,
@@ -67,4 +81,10 @@ export const photoAddMock: PhotosStructure[] = [
   urbanAngelMock,
   deepThoughtsMock,
   caravaggioRoutinesMock,
+];
+
+export const photosModifiedMocks: PhotosStructure[] = [
+  ghostMock,
+  urbanAngelMock,
+  modifiedDeepThoughtsMock,
 ];

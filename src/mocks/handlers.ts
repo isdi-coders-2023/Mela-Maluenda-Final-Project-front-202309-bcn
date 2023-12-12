@@ -1,5 +1,9 @@
 import { http, HttpResponse } from "msw";
-import { photoAddMock, photosMock } from "./photosMock/photosMock";
+import {
+  photoAddMock,
+  photosMock,
+  photosModifiedMocks,
+} from "./photosMock/photosMock";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -12,6 +16,9 @@ export const handlers = [
   http.get(`${apiUrl}/photos/656366e0e627443259cf3cee`, async () =>
     HttpResponse.json({ photo: photoAddMock[3] }),
   ),
+  http.patch(`${apiUrl}/photos/:_id`, async () =>
+    HttpResponse.json({ photo: photosModifiedMocks }),
+  ),
 ];
 
 export const errorHandlers = [
@@ -21,4 +28,5 @@ export const errorHandlers = [
   http.get(`${apiUrl}/photos/656366e0e627443259cf3cee`, async () =>
     HttpResponse.error(),
   ),
+  http.patch(`${apiUrl}/photos/:_id`, async () => HttpResponse.error()),
 ];
