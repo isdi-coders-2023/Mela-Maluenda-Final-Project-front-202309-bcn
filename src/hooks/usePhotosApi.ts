@@ -104,7 +104,50 @@ const usePhotosApi = () => {
     [dispatch],
   );
 
-  return { getPhotosApi, deletePhoto: deletePhoto, addPhoto, loadSelectPhoto };
+  const modifyPhoto = useCallback(
+    async (id: string, modifiedPhoto: PhotoStructureWithoutId) => {
+      try {
+        dispatch(showLoadingActionsCreator());
+
+        const {
+          data: { photo },
+        } = await axios.patch<{ photo: PhotosStructure }>(
+          `/photos/${id}`,
+          modifiedPhoto,
+        );
+
+        dispatch(hideLoadingActionsCreator());
+
+        toast.success(
+          "Congratulations. You have successfully modified the photo data.!",
+          {
+            position: toast.POSITION.BOTTOM_CENTER,
+            className: "toast toast-success",
+          },
+        );
+
+        navigate("/");
+
+        return photo;
+      } catch {
+        dispatch(hideLoadingActionsCreator());
+
+        toast.error("Sorry! Your photo cannot be modified!", {
+          position: toast.POSITION.BOTTOM_CENTER,
+          className: "toast toast-error",
+        });
+      }
+    },
+    [dispatch, navigate],
+  );
+
+  return {
+    getPhotosApi,
+    deletePhoto: deletePhoto,
+    addPhoto,
+    loadSelectPhoto,
+    modifyPhoto,
+  };
 };
 
 export default usePhotosApi;
