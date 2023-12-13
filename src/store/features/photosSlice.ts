@@ -44,6 +44,13 @@ const photosSlice = createSlice({
       ...currentState,
       selectedPhoto: action.payload,
     }),
+
+    modifyPhoto: (currentState, action: PayloadAction<PhotosStructure>) => ({
+      ...currentState,
+      photos: currentState.photos.map((photo) =>
+        photo._id !== action.payload._id ? photo : action.payload,
+      ),
+    }),
   },
 });
 
@@ -52,6 +59,7 @@ export const {
   deletePhoto: deletePhotoActionsCreator,
   addPhoto: addPhotoActionsCreator,
   loadSelectPhoto: loadSelectPhotoActionsCreator,
+  modifyPhoto: modifyPhotoActionsCreator,
 } = photosSlice.actions;
 
 export const photoReducer = photosSlice.reducer;

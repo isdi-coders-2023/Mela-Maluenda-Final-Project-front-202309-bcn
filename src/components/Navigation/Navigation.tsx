@@ -11,7 +11,7 @@ const Navigation = (): React.ReactElement => {
           </NavLink>
         </li>
         <li className="menu__add">
-          <NavLink aria-label="add" to="/add">
+          <NavLink aria-label="add" to="/add-photo">
             Add
           </NavLink>
         </li>

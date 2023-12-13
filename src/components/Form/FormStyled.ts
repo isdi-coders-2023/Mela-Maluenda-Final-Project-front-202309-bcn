@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const FormStyled = styled.form`
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -83,9 +84,7 @@ const FormStyled = styled.form`
     &:disabled {
       color: ${({ theme }) => theme.colors.light};
       background-color: ${({ theme }) => theme.colors.backgroundLight};
-      button.sc-gsTDqH.cwdUJo.butto.button__form {
-        visibility: hidden;
-      }
+
       button.sc-gsTDqH.cwdUJo.butto.button__form:before {
         visibility: visible;
         content: "save chanches";

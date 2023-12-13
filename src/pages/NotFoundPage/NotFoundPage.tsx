@@ -3,19 +3,19 @@ import NotFoundPageStyled from "./NotFoundPageStyled";
 
 const NotFoundPage = (): React.ReactElement => {
   return (
-    <NotFoundPageStyled className="not">
-      <h1 className="not__title">Not found</h1>
+    <NotFoundPageStyled className="not-found">
+      <h1 className="not-found__title">Not found</h1>
       <img
-        className="not__image"
+        className="not-found__image"
         src="/images/notFound.webp"
         alt="An older woman covering her face with her hands"
         width="320"
         height="212"
       />
-      <p className="not__message">
+      <p className="not-found__message">
         We are unable to load the page at this time.
       </p>
-      <Link className="not__button not__button--home" to={"/home/"}>
+      <Link className="no-found__button not-found__button--home" to="/home/">
         Go home
       </Link>
     </NotFoundPageStyled>
