@@ -1,5 +1,4 @@
 import {
-  modifiedDeepThoughtsMock,
   photosMock,
   photosModifiedMocks,
 } from "../../../mocks/photosMock/photosMock";

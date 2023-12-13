@@ -74,6 +74,7 @@ export const photosMock: PhotosStructure[] = [
   ghostMock,
   urbanAngelMock,
   deepThoughtsMock,
+  caravaggioRoutinesMock,
 ];
 
 export const photoAddMock: PhotosStructure[] = [
@@ -87,4 +88,11 @@ export const photosModifiedMocks: PhotosStructure[] = [
   ghostMock,
   urbanAngelMock,
   modifiedDeepThoughtsMock,
+  caravaggioRoutinesMock,
+];
+
+export const photosAddMock: PhotosStructure[] = [
+  ghostMock,
+  urbanAngelMock,
+  deepThoughtsMock,
 ];
