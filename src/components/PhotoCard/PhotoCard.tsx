@@ -2,6 +2,7 @@ import usePhotosApi from "../../hooks/usePhotosApi";
 import {
   deletePhotoActionsCreator,
   loadPhotosActionCreator,
+  loadSelectPhotoActionsCreator,
 } from "../../store/features/photosSlice";
 import { useAppDispatch } from "../../store/hooks";
 import { PhotosStructure } from "../../store/types";
@@ -11,6 +12,7 @@ import PhotoCardStyled from "./PhotoCardStyled";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface PhotosCardProps {
   photo: PhotosStructure;
@@ -20,7 +22,8 @@ const PhotoCard = ({
   photo: { title, author, year, location, category, photoUrl, _id },
 }: PhotosCardProps): React.ReactElement => {
   const dispatch = useAppDispatch();
-  const { deletePhoto, getPhotosApi } = usePhotosApi();
+  const { deletePhoto, getPhotosApi, loadSelectPhoto } = usePhotosApi();
+  const navigate = useNavigate();
 
   const deletePhotoById = async () => {
     try {
@@ -45,6 +48,14 @@ const PhotoCard = ({
     }
   };
 
+  const modifyPhotos = async () => {
+    const selectedPhotos = await loadSelectPhoto(_id);
+
+    dispatch(loadSelectPhotoActionsCreator(selectedPhotos!));
+
+    navigate(`/update/${_id}`);
+  };
+
   return (
     <PhotoCardStyled className="card">
       <Link to={`/details/${_id}`}>
@@ -61,14 +72,14 @@ const PhotoCard = ({
           <img
             className="card__icon"
             src="/images/line.svg"
-            alt={`A line to indicate the more details icon`}
+            alt=""
             width="200"
             height="2"
           />
           <img
             className="card__icon"
             src="/images/detailIcon.svg"
-            alt={`A circular icon with a plus symbol inside`}
+            alt=""
             width="27"
             height="27"
           />
@@ -79,7 +90,7 @@ const PhotoCard = ({
         <span className="card__subtitle">{category}</span>
       </Link>
       <div className="card__button">
-        <Button type="button" text="Modify" />
+        <Button type="button" actionOnClick={modifyPhotos} text="Modify" />
         <Button type="submit" actionOnClick={deletePhotoById} text="Delete" />
       </div>
     </PhotoCardStyled>

@@ -8,7 +8,7 @@ const NotFoundPageStyled = styled.div`
   align-items: center;
   border: solid 7px ${({ theme }) => theme.colors.accentLight};
 
-  .not {
+  .not-found {
     &__title {
       width: 300px;
       padding: 10px 20px;
@@ -49,6 +49,8 @@ const NotFoundPageStyled = styled.div`
         text-align: center;
         padding: 10px 30px;
         width: 160px;
+        border-radius: 8px;
+        color: ${({ theme }) => theme.colors.light};
         background-color: ${({ theme }) => theme.colors.error};
         text-transform: uppercase;
         font-family: ${({ theme }) => theme.typography.mainFontFamily};

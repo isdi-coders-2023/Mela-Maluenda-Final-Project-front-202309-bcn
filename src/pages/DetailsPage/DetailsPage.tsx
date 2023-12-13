@@ -11,15 +11,13 @@ const DetailsPage = (): React.ReactElement => {
   const { photoId } = useParams();
   const dispatch = useAppDispatch();
   const { loadSelectPhoto } = usePhotosApi();
-  const selectPhoto = useAppSelector((state) => state.photoState.selectedPhoto);
+  const photo = useAppSelector((state) => state.photoState.selectedPhoto);
 
   useEffect(() => {
     (async () => {
-      scrollTo(0, 0);
+      const selectedPhoto = await loadSelectPhoto(photoId as string);
 
-      const photo = await loadSelectPhoto(photoId as string);
-
-      dispatch(loadSelectPhotoActionsCreator(photo as PhotosStructure));
+      dispatch(loadSelectPhotoActionsCreator(selectedPhoto as PhotosStructure));
     })();
   }, [dispatch, photoId, loadSelectPhoto]);
 
@@ -29,28 +27,26 @@ const DetailsPage = (): React.ReactElement => {
       <div className="details__container">
         <img
           className="details__image"
-          src={selectPhoto.photoUrl}
-          alt={selectPhoto.title}
+          src={photo.photoUrl}
+          alt={photo.title}
           width="284"
           height="187"
         />
       </div>
       <article className="details__article">
         <h2 className="details__title details__title--accent">
-          {`« ${selectPhoto.title} »`}
+          {`« ${photo.title} »`}
         </h2>
         <ul className="details__properties">
-          <li className="details__property">{`Author: ${selectPhoto.author}`}</li>
-          <li className="details__property">{`Year: ${selectPhoto.year}`}</li>
-          <li className="details__property">{`Location: ${selectPhoto.location}`}</li>
-          <li className="details__property">{`Public space: ${selectPhoto.publicSpace}`}</li>
-          <li className="details__property">{`Category: ${selectPhoto.category}`}</li>
-          <li className="details__property">{`Portfolio: ${selectPhoto.portfolioUrl}`}</li>
+          <li className="details__property">{`Author: ${photo.author}`}</li>
+          <li className="details__property">{`Year: ${photo.year}`}</li>
+          <li className="details__property">{`Location: ${photo.location}`}</li>
+          <li className="details__property">{`Public space: ${photo.publicSpace}`}</li>
+          <li className="details__property">{`Category: ${photo.category}`}</li>
+          <li className="details__property">{`Portfolio: ${photo.portfolioUrl}`}</li>
           <li className="details__property">What made you click:</li>
           <li className="details__property">
-            <p className="details__description">
-              {selectPhoto.whatMadeYouClick}
-            </p>
+            <p className="details__description">{photo.whatMadeYouClick}</p>
           </li>
         </ul>
         <div className="details__button">

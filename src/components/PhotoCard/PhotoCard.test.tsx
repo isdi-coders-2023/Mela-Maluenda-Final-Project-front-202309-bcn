@@ -5,6 +5,7 @@ import userEvent from "@testing-library/user-event";
 import { errorHandlers } from "../../mocks/handlers";
 import server from "../../mocks/node";
 import { photosMock } from "../../mocks/photosMock/photosMock";
+import UpdatePage from "../../pages/UpdatePage/UpdatePage";
 
 describe("Given a PhotoCard component", () => {
   describe("When it receives a 'Ghost'", () => {
@@ -64,6 +65,28 @@ describe("Given a PhotoCard component", () => {
       await userEvent.click(button);
 
       expect(screen.getByText(expectedToastifyError)).toBeInTheDocument();
+    });
+  });
+
+  describe("When it recives a click on 'Modify' button to the 'Urban angel' photo", () => {
+    test("Then it should show the modify page with teh text: 'Modify your photo'", async () => {
+      const mockContest = photosMock[1];
+      const updateHeading = "Modify your photo";
+      const buttonModify = "Modify";
+
+      customRender(
+        <>
+          <PhotoCard photo={mockContest} />
+          <UpdatePage />
+        </>,
+      );
+
+      const button = screen.getByRole("button", { name: buttonModify });
+      const title = screen.getByRole("heading", { name: updateHeading });
+      await userEvent.click(button);
+      waitFor(() => {
+        expect(title).toBeInTheDocument();
+      });
     });
   });
 });
