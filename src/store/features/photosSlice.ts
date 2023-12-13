@@ -48,7 +48,7 @@ const photosSlice = createSlice({
     modifyPhoto: (currentState, action: PayloadAction<PhotosStructure>) => ({
       ...currentState,
       photos: currentState.photos.map((photo) =>
-        photo._id == action.payload._id ? action.payload : photo,
+        photo._id !== action.payload._id ? photo : action.payload,
       ),
     }),
   },
