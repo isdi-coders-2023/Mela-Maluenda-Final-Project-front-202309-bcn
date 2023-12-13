@@ -25,7 +25,7 @@ const AddPage = (): React.ReactElement => {
           </li>
         </ul>
       </section>
-      <Form onSubmit={addPhoto} />
+      <Form onSubmit={addPhoto} buttonText="add photo" />
       <section className="data__detail">
         <h2 className="data__title data__title--detail">
           Contest rules detail
