@@ -117,6 +117,7 @@ const usePhotosApi = () => {
         );
 
         dispatch(hideLoadingActionsCreator());
+        navigate("/home");
 
         toast.success(
           "Congratulations. You have successfully modified the photo data.!",
@@ -125,8 +126,6 @@ const usePhotosApi = () => {
             className: "toast toast-success",
           },
         );
-
-        navigate("/");
 
         return photo;
       } catch {

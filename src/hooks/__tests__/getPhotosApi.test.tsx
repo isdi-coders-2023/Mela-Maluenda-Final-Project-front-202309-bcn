@@ -16,7 +16,7 @@ describe("Given a usePhotosApi hook", () => {
 
       const photos = await getPhotosApi();
 
-      expect(photos).toStrictEqual(expectedPhotos);
+      expect(photos).toStrictEqual({ photos: expectedPhotos });
     });
   });
 });
