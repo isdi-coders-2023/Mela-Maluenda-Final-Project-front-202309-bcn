@@ -13,6 +13,7 @@ const FormStyled = styled.form`
 
   .form {
     &__title {
+      text-align: center;
       width: 250px;
       padding: 20px;
       margin: 0 auto;
