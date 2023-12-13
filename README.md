@@ -1,27 +1,35 @@
-# React + TypeScript + Vite
+# StreetPhoto Contest App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the StreetPhoto Contest App, a mobile-only platform for capturing the essence of street life through captivating photographs. This MERN stack application empowers users to create, view, modify, and delete street photos seamlessly. With Redux state management, TypeScript for robust typing, and a suite of tests ensuring reliability, embark on a visual journey where every snapshot tells a unique street story.
 
-Currently, two official plugins are available:
+# MERN Stack Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The StreetPhoto Contest App is built on the MERN (MongoDB, Express, React, Node.js) stack, offering a powerful combination of technologies for a seamless development experience.
 
-## Expanding the ESLint configuration
+- **MongoDB:** A NoSQL database for efficient data storage and retrieval.
+- **Express:** A robust backend framework for building scalable and modular APIs.
+- **React:** A declarative and component-based front-end library for building interactive user interfaces.
+- **Node.js:** A JavaScript runtime environment that executes server-side code.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This full-stack architecture ensures a cohesive and efficient development process, enabling the app to deliver a smooth user experience.
 
-- Configure the top-level `parserOptions` property like this:
+# SonarCloud Metrics
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Metrics for the StreetPhoto Contest App on SonarCloud:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Bugs: 0
+Code Duplications: 0
+Technical Debt: 0
+Test Coverage: 100%
+These metrics on SonarCloud showcase the application's commitment to code quality, with zero bugs, duplications, or technical debt. Achieving 100% test coverage ensures a robust and reliable codebase.
+
+# SonarCloud Metrics
+
+Metrics for the [StreetPhoto Contest App on SonarCloud](https://sonarcloud.io/summary/overall?id=isdi-coders-2023_Mela-Maluenda-Final-Project-back-202309-bcn):
+
+- **Bugs:** 0
+- **Code Duplications:** 0
+- **Technical Debt:** 0
+- **Test Coverage:** 100%
+
+These metrics on SonarCloud showcase the application's commitment to code quality, with zero bugs, duplications, or technical debt. Achieving 100% test coverage ensures a robust and reliable codebase.
