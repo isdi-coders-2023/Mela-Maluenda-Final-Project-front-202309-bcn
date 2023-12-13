@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PhotoStructureWithoutId, PhotosStructure } from "../../store/types";
 import Button from "../Button/Button";
 import FormStyled from "./FormStyled";
@@ -44,6 +44,12 @@ const Form = ({
       [event.target.id]: event.target.value,
     });
   };
+
+  useEffect(() => {
+    if (selectedPhoto) {
+      setNewPhoto({ ...selectedPhoto });
+    }
+  }, [selectedPhoto]);
 
   const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
