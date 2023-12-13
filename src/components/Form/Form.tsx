@@ -7,12 +7,14 @@ interface FormProps {
   onSubmit: (newPhoto: PhotoStructureWithoutId) => void;
   selectedPhoto?: PhotosStructure;
   buttonText: string;
+  titleText: string;
 }
 
 const Form = ({
   onSubmit,
   selectedPhoto,
   buttonText,
+  titleText,
 }: FormProps): React.ReactElement => {
   let emptyPhoto: PhotoStructureWithoutId = {
     title: "",
@@ -50,7 +52,7 @@ const Form = ({
 
   return (
     <FormStyled onSubmit={onFormSubmit} autoComplete="off">
-      <h2 className="form__title">ADD your PHOTO</h2>
+      <h2 className="form__title">{titleText}</h2>
       <label className="form__label" htmlFor="title">
         Title:
       </label>

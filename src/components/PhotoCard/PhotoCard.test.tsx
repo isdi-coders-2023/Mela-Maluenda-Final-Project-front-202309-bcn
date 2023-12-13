@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 import { errorHandlers } from "../../mocks/handlers";
 import server from "../../mocks/node";
 import { photosMock } from "../../mocks/photosMock/photosMock";
-import UpdatePage from "../../pages/UpdatePage/UpdatePage";
+import App from "../App/App";
 
 describe("Given a PhotoCard component", () => {
   describe("When it receives a 'Ghost'", () => {
@@ -70,20 +70,15 @@ describe("Given a PhotoCard component", () => {
 
   describe("When it recives a click on 'Modify' button to the 'Urban angel' photo", () => {
     test("Then it should show the modify page with text: 'Modify your photo'", async () => {
-      const mockContest = photosMock[1];
       const updateHeading = "Modify your photo";
       const buttonModify = "Modify";
 
-      customRender(
-        <>
-          <PhotoCard photo={mockContest} />
-          <UpdatePage />
-        </>,
-      );
+      customRender(<App />);
 
-      const button = screen.getAllByRole("button", { name: buttonModify });
+      const buttons = screen.getAllByRole("button", { name: buttonModify });
+      await userEvent.click(buttons[0]);
+
       const title = screen.getByRole("heading", { name: updateHeading });
-      await userEvent.click(button[0]);
       waitFor(() => {
         expect(title).toBeInTheDocument();
       });

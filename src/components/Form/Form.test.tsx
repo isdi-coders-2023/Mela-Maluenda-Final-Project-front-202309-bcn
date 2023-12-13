@@ -9,7 +9,13 @@ describe("Given a Form component", () => {
     test("Then it should show a form with a title: 'Title'", () => {
       const expectedLabel = "Title:";
 
-      customRender(<Form onSubmit={actionOnClick} buttonText={"add photo"} />);
+      customRender(
+        <Form
+          titleText="ADD your PHOTO"
+          onSubmit={actionOnClick}
+          buttonText={"add photo"}
+        />,
+      );
 
       const inputText = screen.getByLabelText(expectedLabel);
 
@@ -22,7 +28,13 @@ describe("Given a Form component", () => {
       const expectedInput = "Enrique Muda";
       const expectedLabel = "Author:";
 
-      customRender(<Form onSubmit={actionOnClick} buttonText={"add photo"} />);
+      customRender(
+        <Form
+          titleText="ADD your PHOTO"
+          onSubmit={actionOnClick}
+          buttonText={"add photo"}
+        />,
+      );
 
       const labelText = screen.getByLabelText(expectedLabel);
       await userEvent.type(labelText, expectedInput);
@@ -37,7 +49,13 @@ describe("Given a Form component", () => {
     test("Then it should call its onSubmit action", async () => {
       const expectedLabel = "Title:";
 
-      customRender(<Form onSubmit={actionOnClick} buttonText={"add photo"} />);
+      customRender(
+        <Form
+          titleText="ADD your PHOTO"
+          onSubmit={actionOnClick}
+          buttonText={"add photo"}
+        />,
+      );
 
       const form = screen.getByLabelText(expectedLabel);
 

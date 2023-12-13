@@ -82,7 +82,6 @@ const usePhotosApi = () => {
     async (id: string): Promise<PhotosStructure | void> => {
       try {
         dispatch(showLoadingActionsCreator());
-
         const {
           data: { photo },
         } = await axios.get<{ photo: PhotosStructure }>(`/photos/${id}`);

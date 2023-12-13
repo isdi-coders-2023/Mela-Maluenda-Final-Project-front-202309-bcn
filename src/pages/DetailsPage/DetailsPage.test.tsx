@@ -14,22 +14,22 @@ describe("Givent the DetailsPage component", () => {
       expect(photoClick).toBeInTheDocument();
     });
 
-    test("Then it should show a button with the text 'Delete'", () => {
-      const expectedButton = "Delete";
+    test("Then it should show a title with the text 'Photo details'", () => {
+      const expectedTitle = "Photo details";
 
       customRender(<DetailsPage />);
 
-      const button = screen.getByRole("button", { name: expectedButton });
+      const button = screen.getByRole("heading", { name: expectedTitle });
 
       expect(button).toBeInTheDocument();
     });
 
-    test("Then it should show a button with the text 'Modify'", () => {
-      const expectedButton = "Modify";
+    test("Then it should show a title with the text 'Photo details'", () => {
+      const expectedTitle = "Photo details";
 
       customRender(<DetailsPage />);
 
-      const button = screen.getByRole("button", { name: expectedButton });
+      const button = screen.getByRole("heading", { name: expectedTitle });
 
       expect(button).toBeInTheDocument();
     });

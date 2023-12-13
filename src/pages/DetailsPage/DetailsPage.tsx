@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import Button from "../../components/Button/Button";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import usePhotosApi from "../../hooks/usePhotosApi";
 import { useEffect } from "react";
@@ -49,10 +48,6 @@ const DetailsPage = (): React.ReactElement => {
             <p className="details__description">{photo.whatMadeYouClick}</p>
           </li>
         </ul>
-        <div className="details__button">
-          <Button type="button" text="Modify" />
-          <Button type="submit" text="Delete" />
-        </div>
       </article>
     </DetailsPageStyled>
   );

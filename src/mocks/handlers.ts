@@ -18,6 +18,9 @@ export const handlers = [
   http.get(`${apiUrl}/photos/656366e0e627443259cf3cee`, async () => {
     return HttpResponse.json({ photo: photoAddMock[3] });
   }),
+  http.get(`${apiUrl}/photos/65635f70e627443259cf3ce2`, async () => {
+    return HttpResponse.json({ photo: photoAddMock[3] });
+  }),
   http.patch(`${apiUrl}/photos/:_id`, async () => {
     return HttpResponse.json({ photo: modifiedDeepThoughtsMock });
   }),

@@ -23,6 +23,7 @@ const UpdatePage = (): React.ReactElement => {
     <DetailsPageStyled>
       <h1 className="details__title">Modify your photo</h1>
       <Form
+        titleText="UPDATE"
         onSubmit={updatePhoto}
         buttonText="Modify"
         selectedPhoto={selectedPhoto}
