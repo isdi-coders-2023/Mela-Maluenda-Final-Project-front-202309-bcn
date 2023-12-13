@@ -11,8 +11,7 @@ import Button from "../Button/Button";
 import PhotoCardStyled from "./PhotoCardStyled";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
-import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 interface PhotosCardProps {
   photo: PhotosStructure;
